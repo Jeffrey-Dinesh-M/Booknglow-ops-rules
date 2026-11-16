@@ -1,0 +1,1717 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booknglow Sales Team: Flexi-Shift & Communication Protocol</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Plus Jakarta Sans & Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Plus Jakarta Sans', 'sans-serif'],
+                    },
+                    colors: {
+                        navy: {
+                            950: '#070B14',
+                            900: '#0F172A',
+                            800: '#1E293B',
+                            700: '#334155',
+                        }
+                    }
+                }
+            }
+        };
+    </script>
+
+    <style>
+        /* Zero-Lag 60fps Native Scrolling Canvas */
+        html {
+            scroll-behavior: smooth;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        body {
+            background-color: #EEF3F8;
+            color: #0F172A;
+            overflow-x: hidden;
+            transition: background-color 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        /* Realistic Warm Corporate Office Daylight Themes (Morning -> Noon -> Golden Sunset) */
+        body.office-morning {
+            background-color: #FBF7EF;
+        }
+        body.office-noon {
+            background-color: #EEF3F8;
+        }
+        body.office-sunset {
+            background-color: #F7EFE7;
+        }
+
+        /* Architectural Office Surface Cards */
+        .pro-card {
+            background: #FFFFFF;
+            border: 1px solid #DCE4EE;
+            box-shadow: 0 6px 24px -4px rgba(15, 23, 42, 0.06), 0 1px 3px rgba(15, 23, 42, 0.04);
+            transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.4s cubic-bezier(0.22, 1, 0.36, 1), border-color 0.4s ease;
+            will-change: transform;
+        }
+
+        .pro-card:hover {
+            box-shadow: 0 16px 34px -6px rgba(15, 23, 42, 0.1);
+        }
+
+        /* Fluid Scroll-Triggered Stagger & Depth Reveal */
+        .reveal-block {
+            opacity: 0;
+            transform: translate3d(0, 28px, 0) scale(0.985);
+            transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1), transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+            will-change: transform, opacity;
+        }
+        .reveal-block.is-visible {
+            opacity: 1;
+            transform: translate3d(0, 0, 0) scale(1);
+        }
+
+        .scroll-stagger-item {
+            opacity: 0;
+            transform: translate3d(0, 20px, 0);
+            transition: opacity 0.55s cubic-bezier(0.16, 1, 0.3, 1), transform 0.55s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .is-visible .scroll-stagger-item {
+            opacity: 1;
+            transform: translate3d(0, 0, 0);
+        }
+        .is-visible .scroll-stagger-item:nth-child(1) { transition-delay: 0.05s; }
+        .is-visible .scroll-stagger-item:nth-child(2) { transition-delay: 0.14s; }
+        .is-visible .scroll-stagger-item:nth-child(3) { transition-delay: 0.23s; }
+
+        /* Continuous 60fps Character & Office Micro-Animations */
+        @keyframes charBreathe {
+            0%, 100% { transform: translate3d(0, 0, 0) scaleY(1); }
+            50% { transform: translate3d(0, -1.5px, 0) scaleY(1.015); }
+        }
+        .char-breathe {
+            transform-origin: bottom center;
+            animation: charBreathe 3.2s ease-in-out infinite;
+        }
+
+        @keyframes charHeadNod {
+            0%, 100% { transform: rotate(0deg); }
+            35% { transform: rotate(2.8deg); }
+            70% { transform: rotate(-1.8deg); }
+        }
+        .char-nod {
+            transform-origin: 50% 78%;
+            animation: charHeadNod 4s ease-in-out infinite;
+        }
+
+        @keyframes charBlink {
+            0%, 46%, 50%, 96%, 100% { transform: scaleY(1); }
+            48%, 98% { transform: scaleY(0.08); }
+        }
+        .char-eyes {
+            transform-origin: center;
+            animation: charBlink 4.6s infinite;
+        }
+
+        @keyframes charWave {
+            0%, 100% { transform: rotate(0deg); }
+            25% { transform: rotate(-16deg); }
+            50% { transform: rotate(8deg); }
+            75% { transform: rotate(-12deg); }
+        }
+        .char-wave {
+            transform-origin: 85% 85%;
+            animation: charWave 2.4s ease-in-out infinite;
+        }
+
+        @keyframes plantSway {
+            0%, 100% { transform: rotate(0deg); }
+            50% { transform: rotate(3.2deg); }
+        }
+        .office-plant-sway {
+            transform-origin: bottom center;
+            animation: plantSway 4.8s ease-in-out infinite;
+        }
+        @keyframes monitorTicker {
+            0%, 100% { transform: scaleX(0.85); opacity: 0.75; }
+            50% { transform: scaleX(1.05); opacity: 1; }
+        }
+        .ticker-bar {
+            transform-origin: left center;
+            animation: monitorTicker 2.4s ease-in-out infinite;
+        }
+
+        @keyframes typingHands {
+            0%, 100% { transform: translate3d(0, 0, 0); }
+            50% { transform: translate3d(0, -2.5px, 0); }
+        }
+        .char-type-l { animation: typingHands 0.42s ease-in-out infinite; }
+        .char-type-r { animation: typingHands 0.42s ease-in-out 0.21s infinite; }
+
+        @keyframes floatSpeech {
+            0%, 100% { transform: translate3d(0, 0, 0); }
+            50% { transform: translate3d(0, -4px, 0); }
+        }
+        .float-bubble {
+            animation: floatSpeech 2.8s ease-in-out infinite;
+        }
+
+        @keyframes steamRise {
+            0% { transform: translate3d(0, 2px, 0) scale(0.9); opacity: 0; }
+            50% { opacity: 0.8; }
+            100% { transform: translate3d(0, -8px, 0) scale(1.15); opacity: 0; }
+        }
+        .coffee-steam { animation: steamRise 2.2s ease-out infinite; }
+
+        /* Animated Flow Lines & Pulses */
+        @keyframes dashFlow {
+            to { stroke-dashoffset: -24; }
+        }
+        .animate-flow-line {
+            stroke-dasharray: 6, 6;
+            animation: dashFlow 0.95s linear infinite;
+        }
+        .animate-flow-slow {
+            stroke-dasharray: 4, 6;
+            animation: dashFlow 1.8s linear infinite;
+        }
+
+        @keyframes phoneRing {
+            0%, 100% { transform: rotate(0deg); }
+            10% { transform: rotate(-15deg); }
+            20% { transform: rotate(15deg); }
+            30% { transform: rotate(-10deg); }
+            40% { transform: rotate(10deg); }
+            50% { transform: rotate(0deg); }
+        }
+        .animate-phone-ring {
+            transform-origin: center;
+            animation: phoneRing 2.2s ease-in-out infinite;
+        }
+
+        @keyframes typingDot {
+            0%, 60%, 100% { transform: translate3d(0, 0, 0); opacity: 0.35; }
+            30% { transform: translate3d(0, -3px, 0); opacity: 1; }
+        }
+        .dot-1 { animation: typingDot 1.3s infinite 0s; }
+        .dot-2 { animation: typingDot 1.3s infinite 0.18s; }
+        .dot-3 { animation: typingDot 1.3s infinite 0.36s; }
+
+        @keyframes stressShake {
+            0%, 100% { transform: translate3d(0, 0, 0); }
+            25% { transform: translate3d(-2px, 0, 0); }
+            75% { transform: translate3d(2px, 0, 0); }
+        }
+        .agent-stressed {
+            animation: stressShake 0.35s ease-in-out infinite;
+        }
+
+        /* Touch-Friendly Custom Range Slider (Phone, Tablet & Laptop) */
+        input[type="range"].time-scrubber {
+            -webkit-appearance: none;
+            appearance: none;
+            background: transparent;
+            cursor: pointer;
+            height: 32px;
+        }
+        input[type="range"].time-scrubber::-webkit-slider-runnable-track {
+            height: 10px;
+            border-radius: 999px;
+            background: linear-gradient(90deg, #F59E0B 0%, #0D9488 50%, #2563EB 100%);
+        }
+        input[type="range"].time-scrubber::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 26px;
+            height: 26px;
+            border-radius: 50%;
+            background: #FFFFFF;
+            border: 3.5px solid #0F172A;
+            box-shadow: 0 3px 10px rgba(15, 23, 42, 0.35);
+            margin-top: -8px;
+            transition: transform 0.2s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+        input[type="range"].time-scrubber::-webkit-slider-thumb:hover,
+        input[type="range"].time-scrubber::-webkit-slider-thumb:active {
+            transform: scale(1.16);
+        }
+
+        /* Shift Card States */
+        .shift-card {
+            transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.45s ease, border-color 0.45s ease, box-shadow 0.45s ease;
+        }
+        .shift-card-resting {
+            opacity: 0.64;
+            transform: scale(0.985);
+        }
+        .shift-card-active {
+            opacity: 1;
+            transform: translate3d(0, -3px, 0) scale(1.01);
+            box-shadow: 0 18px 28px -10px rgba(15, 23, 42, 0.11);
+        }
+
+        /* Protocol Simulation Node States */
+        .protocol-node {
+            transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease;
+        }
+        .protocol-active {
+            transform: translate3d(0, -5px, 0) scale(1.02);
+            border-color: #0D9488 !important;
+            box-shadow: 0 20px 32px -8px rgba(13, 148, 136, 0.24);
+        }
+        .protocol-dimmed {
+            opacity: 0.45;
+        }
+
+        /* Hide horizontal scrollbar cleanly on mobile nav */
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+        @media print {
+            .no-print { display: none !important; }
+            body { background: #FFFFFF !important; }
+            .reveal-block { opacity: 1 !important; transform: none !important; }
+        }
+    </style>
+</head>
+<body class="office-noon antialiased selection:bg-teal-600 selection:text-white">
+
+    <!-- Realistic Corporate Office Space Architectural Backdrop (Parallax Scroll + Daylight Motes) -->
+    <div class="fixed inset-0 pointer-events-none z-0 overflow-hidden no-print" aria-hidden="true">
+        <canvas id="ambientParticleCanvas" class="w-full h-full opacity-55"></canvas>
+        <!-- Parallax Modern Office Interior: Ceiling Louvers, Glass Cubicles, Bookshelf & Sunbeams -->
+        <svg id="officeAtmosphereSvg" class="absolute inset-0 w-full h-[115%] -top-[5%] opacity-[0.07] transition-opacity duration-700 will-change-transform" viewBox="0 0 1440 960" preserveAspectRatio="xMidYMid slice" fill="none">
+            <!-- Acoustic Ceiling Baffles & Pendant Lights -->
+            <line x1="120" y1="0" x2="120" y2="95" stroke="#0F172A" stroke-width="2"/>
+            <path d="M96 105C96 95 106 90 120 90C134 90 144 95 144 105H96Z" fill="#0F172A"/>
+            <line x1="720" y1="0" x2="720" y2="80" stroke="#0F172A" stroke-width="2"/>
+            <path d="M696 90C696 80 706 75 720 75C734 75 744 80 744 90H696Z" fill="#0F172A"/>
+            <line x1="1310" y1="0" x2="1310" y2="95" stroke="#0F172A" stroke-width="2"/>
+            <path d="M1286 105C1286 95 1296 90 1310 90C1324 90 1334 95 1334 105H1286Z" fill="#0F172A"/>
+
+            <!-- Skylight Daylight Beams -->
+            <polygon id="officeSunbeam1" points="160,0 440,0 780,960 300,960" fill="#F59E0B"/>
+            <polygon id="officeSunbeam2" points="860,0 1160,0 1420,960 980,960" fill="#0D9488"/>
+
+            <!-- Floor-to-Ceiling Glass Partition Walls -->
+            <rect x="48" y="160" width="340" height="620" rx="14" stroke="#0F172A" stroke-width="2"/>
+            <line x1="218" y1="160" x2="218" y2="780" stroke="#0F172A" stroke-width="1.5"/>
+            <line x1="48" y1="470" x2="388" y2="470" stroke="#0F172A" stroke-width="1.5"/>
+
+            <rect x="1052" y="160" width="340" height="620" rx="14" stroke="#0F172A" stroke-width="2"/>
+            <line x1="1222" y1="160" x2="1222" y2="780" stroke="#0F172A" stroke-width="1.5"/>
+            <line x1="1052" y1="470" x2="1392" y2="470" stroke="#0F172A" stroke-width="1.5"/>
+
+            <!-- Office Floor & Workstation Desk Silhouettes -->
+            <line x1="0" y1="780" x2="1440" y2="780" stroke="#0F172A" stroke-width="2.5"/>
+            <rect x="440" y="685" width="220" height="12" rx="4" fill="#0F172A"/>
+            <rect x="465" y="697" width="10" height="83" fill="#0F172A"/>
+            <rect x="625" y="697" width="10" height="83" fill="#0F172A"/>
+            <rect x="780" y="685" width="220" height="12" rx="4" fill="#0F172A"/>
+            <rect x="805" y="697" width="10" height="83" fill="#0F172A"/>
+            <rect x="965" y="697" width="10" height="83" fill="#0F172A"/>
+        </svg>
+    </div>
+
+    <!-- ========================================================= -->
+    <!-- STICKY QUICK-JUMP NAVIGATION & LIVE SIMULATION BAR        -->
+    <!-- ========================================================= -->
+    <nav class="sticky top-0 z-40 bg-white/95 border-b border-slate-200/90 shadow-xs no-print">
+        <!-- Scroll Progress Hairline -->
+        <div id="scrollProgressBar" class="h-[3px] w-0 bg-gradient-to-r from-amber-500 via-teal-500 to-blue-600 transition-[width] duration-75 ease-out"></div>
+        <div class="max-w-[1240px] mx-auto px-3 sm:px-6 min-h-[56px] py-1.5 flex items-center justify-between gap-2 sm:gap-3">
+            <!-- Brand & Touch-Friendly Quick Section Links -->
+            <div class="flex items-center gap-1.5 sm:gap-4 overflow-x-auto no-scrollbar">
+                <a href="#top-header" class="flex items-center gap-2 shrink-0 min-h-[40px] px-1">
+                    <span class="w-8 h-8 rounded-lg bg-gradient-to-br from-teal-600 to-blue-600 text-white font-display font-extrabold text-xs flex items-center justify-center shadow-xs">BG</span>
+                    <span class="font-display font-extrabold text-sm text-navy-900 hidden md:inline">Booknglow Office</span>
+                </a>
+                <div class="h-4 w-px bg-slate-200 hidden sm:block shrink-0"></div>
+                <div class="flex items-center gap-1 text-xs font-bold">
+                    <a href="#section-shifts" class="min-h-[40px] inline-flex items-center px-2.5 sm:px-3 rounded-xl text-slate-600 hover:text-navy-900 hover:bg-slate-100 transition whitespace-nowrap">01. Shifts</a>
+                    <a href="#section-data" class="min-h-[40px] inline-flex items-center px-2.5 sm:px-3 rounded-xl text-slate-600 hover:text-navy-900 hover:bg-slate-100 transition whitespace-nowrap">02. WhatsApp &amp; EOD</a>
+                    <a href="#section-escalation" class="min-h-[40px] inline-flex items-center px-2.5 sm:px-3 rounded-xl text-slate-600 hover:text-navy-900 hover:bg-slate-100 transition whitespace-nowrap">03. Escalation</a>
+                    <a href="#section-contingency" class="min-h-[40px] inline-flex items-center px-2.5 sm:px-3 rounded-xl text-slate-600 hover:text-navy-900 hover:bg-slate-100 transition whitespace-nowrap">04. Absence</a>
+                </div>
+            </div>
+
+            <!-- Live Day Auto-Play & Locked 3x Speed Badge (40px+ Touch Targets) -->
+            <div class="flex items-center gap-1.5 sm:gap-2 shrink-0">
+                <button type="button" id="autoPlayToggleBtn" onclick="toggleDayAutoPlay()" class="min-h-[40px] inline-flex items-center gap-1.5 px-3 rounded-xl bg-teal-600 text-white text-xs font-extrabold shadow-xs hover:bg-teal-500 transition cursor-pointer">
+                    <span id="autoPlayDot" class="w-2 h-2 rounded-full bg-amber-300 animate-ping"></span>
+                    <span id="autoPlayLabel">Day Cycle: ON</span>
+                </button>
+                <span class="min-h-[40px] inline-flex items-center gap-1 px-2.5 rounded-xl bg-slate-100 text-navy-900 text-xs font-extrabold border border-slate-200 select-none" title="Locked at 3x Simulation Speed">
+                    <span class="w-1.5 h-1.5 rounded-full bg-teal-600"></span>
+                    3x
+                </span>
+                <button type="button" onclick="window.print()" class="hidden lg:inline-flex min-h-[40px] items-center gap-1.5 px-3.5 rounded-xl bg-navy-900 hover:bg-navy-800 text-white text-xs font-bold transition cursor-pointer">
+                    <span>Print / PDF</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Single-Page Dashboard Container -->
+    <main id="top-header" class="relative z-10 max-w-[1240px] mx-auto px-3 sm:px-6 py-4 sm:py-7 space-y-5 sm:space-y-6">
+
+        <!-- ========================================================= -->
+        <!-- HERO EXECUTIVE HEADER                                     -->
+        <!-- ========================================================= -->
+        <header class="relative overflow-hidden rounded-3xl bg-gradient-to-br from-navy-950 via-navy-900 to-indigo-950 text-white p-5 sm:p-8 shadow-xl border border-slate-800">
+            <!-- Subtle Geometric Accent Lines -->
+            <svg class="absolute right-0 top-0 h-full w-1/2 opacity-15 pointer-events-none" viewBox="0 0 400 300" fill="none">
+                <circle cx="320" cy="60" r="140" stroke="#14B8A6" stroke-width="1.5" stroke-dasharray="6 6"/>
+                <circle cx="320" cy="60" r="95" stroke="#F59E0B" stroke-width="1.5"/>
+                <circle cx="320" cy="60" r="200" stroke="#3B82F6" stroke-width="1"/>
+            </svg>
+
+            <div class="relative z-10 flex flex-col lg:flex-row lg:items-center lg:justify-between gap-5 sm:gap-6">
+                <div class="space-y-2.5 max-w-3xl">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 border border-white/15 text-teal-300 text-[11px] sm:text-xs font-bold tracking-wider uppercase">
+                        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                        BOOKNGLOW • SALES OPERATIONS &amp; LEADERSHIP ALIGNMENT
+                    </div>
+                    <h1 style="font-size: clamp(1.45rem, 3.2vw, 2.2rem);" class="font-display font-extrabold tracking-tight text-white leading-[1.16]">
+                        Booknglow Sales Team: <span class="bg-gradient-to-r from-teal-300 via-emerald-200 to-amber-300 bg-clip-text text-transparent">Flexi-Shift &amp; Communication Protocol</span>
+                    </h1>
+                    <p class="text-slate-300 text-xs sm:text-sm md:text-base font-medium leading-relaxed">
+                        Official operational charter for <strong>MD, CEO, Admin &amp; Department Heads</strong>—providing complete shift visibility while protecting agent morale, rapport, and team retention.
+                    </p>
+                </div>
+
+                <!-- Live Telemetry Pills & Primary Simulation Action -->
+                <div class="flex flex-col sm:flex-row lg:flex-col items-stretch sm:items-center lg:items-end gap-3 shrink-0">
+                    <div class="flex items-center justify-between sm:justify-start gap-3 bg-white/10 border border-white/15 rounded-2xl px-4 py-2.5">
+                        <div class="text-left sm:text-right">
+                            <div class="text-[10px] font-bold uppercase tracking-wider text-slate-400">Office Shift Clock</div>
+                            <div id="heroClockDisplay" class="font-display text-base sm:text-lg font-extrabold text-amber-300">02:00 PM</div>
+                        </div>
+                        <div class="h-8 w-px bg-white/15"></div>
+                        <div>
+                            <div class="text-[10px] font-bold uppercase tracking-wider text-slate-400">Active Shifts</div>
+                            <div id="heroActiveShiftsDisplay" class="font-display text-base sm:text-lg font-extrabold text-emerald-300">3 / 3 Peak</div>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center gap-2 no-print">
+                        <button type="button" id="simulateBtn" onclick="runProtocolSimulation()" class="w-full sm:w-auto min-h-[44px] inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-gradient-to-r from-amber-400 to-amber-500 hover:from-amber-300 hover:to-amber-400 text-navy-950 text-xs sm:text-sm font-extrabold shadow-lg shadow-amber-500/20 hover:scale-[1.02] active:scale-[0.99] transition-all cursor-pointer">
+                            <svg class="w-4 h-4 fill-current shrink-0" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                            <span id="simBtnText">Simulate Query Path</span>
+                        </button>
+                        <button type="button" id="resetSimBtn" onclick="resetSimulation()" class="hidden min-h-[44px] px-3.5 py-2.5 rounded-xl bg-white/15 hover:bg-white/25 text-white text-xs font-bold transition cursor-pointer">
+                            Reset
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- ========================================================= -->
+        <!-- SECTION 01: FLEXI-SHIFTS & DYNAMIC OFFICE DAY TIMELINE    -->
+        <!-- ========================================================= -->
+        <section id="section-shifts" class="pro-card reveal-block is-visible rounded-3xl p-4 sm:p-7 scroll-mt-20">
+            <div class="flex flex-col md:flex-row md:items-center justify-between gap-3 mb-5">
+                <div class="flex items-center gap-3.5">
+                    <div class="w-10 h-10 rounded-2xl bg-gradient-to-br from-blue-600 to-teal-600 text-white font-display font-extrabold flex items-center justify-center shadow-sm shrink-0">
+                        01
+                    </div>
+                    <div>
+                        <h2 class="font-display text-base sm:text-xl font-extrabold text-navy-900">Sales Team Flexi-Shift Schedule (5-Hour Windows)</h2>
+                        <p class="text-xs sm:text-sm text-slate-600">Watch the office shift smoothly from morning to evening—or scrub any hour below.</p>
+                    </div>
+                </div>
+
+                <!-- Dynamic Office Daylight / Mood Indicator -->
+                <div id="skyMoodBadge" class="inline-flex items-center gap-2 px-3.5 py-2 rounded-2xl bg-amber-50 border border-amber-200 text-amber-900 text-xs font-extrabold self-start md:self-auto transition-colors duration-500">
+                    <span id="skyMoodIcon" class="text-base">🔥</span>
+                    <span id="skyMoodText">Peak Overlap Window (All 3 Shifts Active)</span>
+                </div>
+            </div>
+
+            <!-- 3 Realistic Animated Office Workstation Character Cards -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-5 mb-6">
+
+                <!-- SHIFT 1: FIRST SHIFT (10:00 AM - 3:00 PM) -->
+                <div id="shift-card-1" class="shift-card shift-card-active scroll-stagger-item rounded-2xl bg-gradient-to-b from-amber-50/90 via-white to-white border-2 border-amber-300 p-4 sm:p-5 relative overflow-hidden">
+                    <div class="flex items-start justify-between gap-2 mb-3">
+                        <div>
+                            <span id="badge-shift-1" class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-emerald-100 text-emerald-800 text-[11px] font-extrabold uppercase tracking-wide">
+                                <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-ping"></span>
+                                Active Shift
+                            </span>
+                            <h3 class="font-display text-xs font-extrabold text-amber-800 uppercase tracking-wider mt-1.5">First Shift • Morning</h3>
+                            <div class="font-display text-lg sm:text-2xl font-extrabold text-navy-900">10:00 AM – 3:00 PM</div>
+                        </div>
+                        <!-- Live Synchronized Analog Clock -->
+                        <svg class="w-11 h-11 sm:w-12 sm:h-12 shrink-0" viewBox="0 0 48 48" fill="none">
+                            <circle cx="24" cy="24" r="21" fill="#FFFBEB" stroke="#FCD34D" stroke-width="2"/>
+                            <path d="M24 24 L10 16 A16 16 0 0 1 40 24 Z" fill="#F59E0B" fill-opacity="0.28"/>
+                            <line id="clock1-hour" x1="24" y1="24" x2="15" y2="19" stroke="#0F172A" stroke-width="2.4" stroke-linecap="round"/>
+                            <line id="clock1-min" x1="24" y1="24" x2="24" y2="10" stroke="#D97706" stroke-width="1.8" stroke-linecap="round"/>
+                            <circle cx="24" cy="24" r="2.2" fill="#0F172A"/>
+                        </svg>
+                    </div>
+
+                    <!-- Detailed Realistic Character 1: Morning Sales Specialist at Office Desk -->
+                    <div class="rounded-xl bg-gradient-to-b from-amber-100/50 to-slate-100/70 border border-amber-200/70 pt-3 px-3 pb-0 flex flex-col items-center relative">
+                        <div id="speech-shift-1" class="float-bubble absolute top-2 right-2.5 px-2.5 py-1 rounded-lg bg-white border border-amber-200 shadow-xs text-[10px] font-extrabold text-amber-900 z-10">
+                            "Morning calls active!"
+                        </div>
+
+                        <svg class="w-48 h-36 overflow-visible" viewBox="0 0 190 140" fill="none">
+                            <defs>
+                                <linearGradient id="skin1" x1="70" y1="32" x2="115" y2="85" gradientUnits="userSpaceOnUse">
+                                    <stop offset="0%" stop-color="#FAD4B4"/>
+                                    <stop offset="100%" stop-color="#E5AE84"/>
+                                </linearGradient>
+                                <linearGradient id="blazer1" x1="55" y1="90" x2="135" y2="125" gradientUnits="userSpaceOnUse">
+                                    <stop offset="0%" stop-color="#1E293B"/>
+                                    <stop offset="100%" stop-color="#0F172A"/>
+                                </linearGradient>
+                            </defs>
+                            <!-- Office Glass Cubicle & Pinboard -->
+                            <rect x="16" y="12" width="158" height="94" rx="10" fill="#FFFBEB" fill-opacity="0.7" stroke="#FDE68A" stroke-width="1.5"/>
+                            <line x1="95" y1="12" x2="95" y2="106" stroke="#FDE68A" stroke-width="1.2"/>
+                            <!-- Sticky Note & Mini Clock on Office Wall -->
+                            <rect x="24" y="22" width="18" height="16" rx="2" fill="#FEF08A" stroke="#FACC15" stroke-width="1"/>
+                            <line x1="27" y1="27" x2="39" y2="27" stroke="#CA8A04" stroke-width="1.2"/>
+                            <line x1="27" y1="31" x2="36" y2="31" stroke="#CA8A04" stroke-width="1.2"/>
+
+                            <!-- Swaying Office Desk Plant -->
+                            <g transform="translate(22, 92)">
+                                <g class="office-plant-sway">
+                                    <path d="M8 14C4 8 2 4 6 1C9 4 9 9 8 14Z" fill="#10B981"/>
+                                    <path d="M10 14C14 7 17 3 13 0C10 3 10 8 10 14Z" fill="#059669"/>
+                                    <path d="M9 14C9 8 8 3 10 0C11 3 10 8 9 14Z" fill="#34D399"/>
+                                </g>
+                                <rect x="4" y="14" width="11" height="16" rx="2.5" fill="#B45309"/>
+                            </g>
+
+                            <!-- Ergonomic Office Chair Backrest -->
+                            <rect x="64" y="64" width="62" height="58" rx="14" fill="#334155"/>
+                            <rect x="68" y="68" width="54" height="50" rx="11" fill="#475569"/>
+
+                            <!-- Torso, Collar, Lanyard & ID Badge -->
+                            <g class="char-breathe">
+                                <path d="M55 122C55 101 69 91 95 91C121 91 135 101 135 122H55Z" fill="url(#blazer1)"/>
+                                <path d="M81 91L95 110L109 91H81Z" fill="#F59E0B"/>
+                                <!-- Sales Lanyard -->
+                                <path d="M84 91L95 112L106 91" stroke="#14B8A6" stroke-width="2" fill="none"/>
+                                <rect x="90" y="111" width="10" height="8" rx="1.5" fill="#FFFFFF" stroke="#94A3B8" stroke-width="0.8"/>
+                                <!-- Neck with Collar Shadow -->
+                                <rect x="88" y="77" width="14" height="17" rx="6" fill="#DFA57C"/>
+                                <path d="M88 83Q95 87 102 83V78H88V83Z" fill="#C98A60" fill-opacity="0.45"/>
+                            </g>
+
+                            <!-- Detailed Head, Hair Strands, Eyes, Nose, Ears & Headset -->
+                            <g class="char-nod">
+                                <!-- Back Hair Volume -->
+                                <path d="M68 56C68 38 79 26 95 26C111 26 122 38 122 56V78C122 84 116 88 110 88H80C74 88 68 84 68 78V56Z" fill="#1C1917"/>
+                                <!-- Ears -->
+                                <circle cx="75" cy="59" r="4.5" fill="#E8B288"/>
+                                <circle cx="115" cy="59" r="4.5" fill="#E8B288"/>
+                                <!-- Face Contour -->
+                                <path d="M76 54C76 42 84 34 95 34C106 34 114 42 114 54V64C114 75 105.5 83 95 83C84.5 83 76 75 76 64V54Z" fill="url(#skin1)"/>
+                                <!-- Layered Front Fringe -->
+                                <path d="M75 52C77 39 86 33 98 33C107 33 114 39 115 49C108 44 99 42 89 44C82 45.5 78 49 75 52Z" fill="#292524"/>
+                                <path d="M85 35C92 38 98 41 103 45" stroke="#44403C" stroke-width="1.2" stroke-linecap="round"/>
+                                <!-- Expressive Eyebrows -->
+                                <path d="M83 51.5Q87 49.5 91 51.5" stroke="#292524" stroke-width="1.9" stroke-linecap="round"/>
+                                <path d="M99 51.5Q103 49.5 107 51.5" stroke="#292524" stroke-width="1.9" stroke-linecap="round"/>
+                                <!-- Detailed Eyes with Iris & Specular Catchlights -->
+                                <g class="char-eyes">
+                                    <ellipse cx="87" cy="57" rx="3.2" ry="2.6" fill="#FFFFFF"/>
+                                    <ellipse cx="103" cy="57" rx="3.2" ry="2.6" fill="#FFFFFF"/>
+                                    <circle cx="87.2" cy="57" r="2.1" fill="#1E293B"/>
+                                    <circle cx="103.2" cy="57" r="2.1" fill="#1E293B"/>
+                                    <circle cx="88" cy="56.1" r="0.8" fill="#FFFFFF"/>
+                                    <circle cx="104" cy="56.1" r="0.8" fill="#FFFFFF"/>
+                                </g>
+                                <!-- Subtle Nose Bridge & Warm Cheek Blush -->
+                                <path d="M95 57V62.5L97 63.5" stroke="#C88B63" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                <ellipse cx="82" cy="63" rx="3.8" ry="2" fill="#FDA4AF" fill-opacity="0.5"/>
+                                <ellipse cx="108" cy="63" rx="3.8" ry="2" fill="#FDA4AF" fill-opacity="0.5"/>
+                                <!-- Warm Smile -->
+                                <path d="M89 68.5Q95 73.5 101 68.5" stroke="#9A3412" stroke-width="2.1" stroke-linecap="round"/>
+                                <!-- Pro Sales Headset -->
+                                <path d="M73 55C73 40 83 30 95 30C107 30 117 40 117 55" stroke="#0D9488" stroke-width="3.2" stroke-linecap="round"/>
+                                <rect x="69" y="51" width="7" height="14" rx="3.5" fill="#0F172A"/>
+                                <rect x="114" y="51" width="7" height="14" rx="3.5" fill="#0F172A"/>
+                                <path d="M72 62Q78 72 89 72" stroke="#0D9488" stroke-width="2" stroke-linecap="round"/>
+                                <circle cx="90" cy="72" r="2.2" fill="#14B8A6"/>
+                            </g>
+
+                            <!-- Office Desk Surface -->
+                            <rect x="12" y="122" width="166" height="10" rx="5" fill="#CBD5E1"/>
+                            <rect x="12" y="122" width="166" height="3" rx="1.5" fill="#E2E8F0"/>
+
+                            <!-- Steaming Coffee Mug -->
+                            <g transform="translate(132, 96)">
+                                <path d="M6 4C6 1 9 -1 9 -4" stroke="#D97706" stroke-width="1.6" stroke-linecap="round" class="coffee-steam"/>
+                                <path d="M13 4C13 1 16 -1 16 -4" stroke="#D97706" stroke-width="1.6" stroke-linecap="round" class="coffee-steam" style="animation-delay: 0.9s;"/>
+                                <rect x="2" y="8" width="18" height="18" rx="3" fill="#FFFFFF" stroke="#F59E0B" stroke-width="2"/>
+                                <path d="M20 12H23C24.5 12 25.5 13 25.5 14.5V18.5C25.5 20 24.5 21 23 21H20" stroke="#F59E0B" stroke-width="2"/>
+                            </g>
+                        </svg>
+                    </div>
+                    <div class="mt-2.5 flex items-center justify-between text-xs text-slate-600">
+                        <span class="font-semibold text-navy-800">Early Outreach Wave</span>
+                        <span class="px-2 py-0.5 rounded bg-amber-100 text-amber-900 font-bold">5 Hrs Flexi</span>
+                    </div>
+                </div>
+
+                <!-- SHIFT 2: SECOND SHIFT (12:00 PM - 5:00 PM) -->
+                <div id="shift-card-2" class="shift-card shift-card-active scroll-stagger-item rounded-2xl bg-gradient-to-b from-teal-50/90 via-white to-white border-2 border-teal-400 p-4 sm:p-5 relative overflow-hidden">
+                    <div class="flex items-start justify-between gap-2 mb-3">
+                        <div>
+                            <span id="badge-shift-2" class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-emerald-100 text-emerald-800 text-[11px] font-extrabold uppercase tracking-wide">
+                                <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-ping"></span>
+                                Active Shift
+                            </span>
+                            <h3 class="font-display text-xs font-extrabold text-teal-800 uppercase tracking-wider mt-1.5">Second Shift • Afternoon</h3>
+                            <div class="font-display text-lg sm:text-2xl font-extrabold text-navy-900">12:00 PM – 5:00 PM</div>
+                        </div>
+                        <svg class="w-11 h-11 sm:w-12 sm:h-12 shrink-0" viewBox="0 0 48 48" fill="none">
+                            <circle cx="24" cy="24" r="21" fill="#F0FDFA" stroke="#5EEAD4" stroke-width="2"/>
+                            <path d="M24 24 L24 8 A16 16 0 0 1 32 38 Z" fill="#14B8A6" fill-opacity="0.28"/>
+                            <line id="clock2-hour" x1="24" y1="24" x2="24" y2="14" stroke="#0F172A" stroke-width="2.4" stroke-linecap="round"/>
+                            <line id="clock2-min" x1="24" y1="24" x2="24" y2="10" stroke="#0D9488" stroke-width="1.8" stroke-linecap="round"/>
+                            <circle cx="24" cy="24" r="2.2" fill="#0F172A"/>
+                        </svg>
+                    </div>
+
+                    <!-- Detailed Realistic Character 2: Afternoon Account Executive with Glasses & Laptop -->
+                    <div class="rounded-xl bg-gradient-to-b from-teal-100/50 to-slate-100/70 border border-teal-200/70 pt-3 px-3 pb-0 flex flex-col items-center relative">
+                        <div id="speech-shift-2" class="float-bubble absolute top-2 right-2.5 px-2.5 py-1 rounded-lg bg-white border border-teal-200 shadow-xs text-[10px] font-extrabold text-teal-900 z-10" style="animation-delay: 0.7s;">
+                            "Demos in progress!"
+                        </div>
+
+                        <svg class="w-48 h-36 overflow-visible" viewBox="0 0 190 140" fill="none">
+                            <defs>
+                                <linearGradient id="skin2" x1="75" y1="32" x2="115" y2="82" gradientUnits="userSpaceOnUse">
+                                    <stop offset="0%" stop-color="#E8B288"/>
+                                    <stop offset="100%" stop-color="#CF9168"/>
+                                </linearGradient>
+                            </defs>
+                            <!-- Office Partition & Hanging Pendant Light -->
+                            <rect x="16" y="12" width="158" height="94" rx="10" fill="#F0FDFA" fill-opacity="0.7" stroke="#99F6E4" stroke-width="1.5"/>
+                            <line x1="40" y1="0" x2="40" y2="20" stroke="#0D9488" stroke-width="1.8"/>
+                            <path d="M30 26C30 20 34 18 40 18C46 18 50 20 50 26H30Z" fill="#0F766E"/>
+                            <circle cx="40" cy="27" r="3" fill="#FEF08A"/>
+
+                            <!-- Office Chair -->
+                            <rect x="64" y="64" width="62" height="58" rx="14" fill="#1E293B"/>
+
+                            <!-- Torso & Crisp Shirt -->
+                            <g class="char-breathe">
+                                <path d="M54 122C54 100 69 90 95 90C121 90 136 100 136 122H54Z" fill="#0F766E"/>
+                                <path d="M84 90L95 105L106 90H84Z" fill="#FFFFFF"/>
+                                <path d="M93.5 94L95 103L96.5 94L95 91L93.5 94Z" fill="#0D9488"/>
+                                <rect x="88" y="76" width="14" height="17" rx="6" fill="#C98B63"/>
+                            </g>
+
+                            <!-- Detailed Head, Styled Hair, Glasses, Eyes & Smile -->
+                            <g class="char-nod" style="animation-delay: 0.7s;">
+                                <circle cx="76" cy="58" r="4.5" fill="#D99E74"/>
+                                <circle cx="114" cy="58" r="4.5" fill="#D99E74"/>
+                                <path d="M75 50C75 35 84 27 95 27C106 27 115 35 115 50V56H75V50Z" fill="#1E293B"/>
+                                <path d="M77 52C77 41 85 34 95 34C105 34 113 41 113 52V63C113 74 105 82 95 82C85 82 77 74 77 63V52Z" fill="url(#skin2)"/>
+                                <path d="M76 48C79 35 89 30 101 32C109 33 114 39 114 47C107 42 97 41 86 43C80 44 77 46 76 48Z" fill="#0F172A"/>
+                                <!-- Glasses Frame with Subtle Lens Glint -->
+                                <rect x="80" y="52" width="12" height="8.5" rx="2.5" stroke="#0F172A" stroke-width="1.8" fill="#FFFFFF" fill-opacity="0.3"/>
+                                <rect x="98" y="52" width="12" height="8.5" rx="2.5" stroke="#0F172A" stroke-width="1.8" fill="#FFFFFF" fill-opacity="0.3"/>
+                                <line x1="92" y1="55.5" x2="98" y2="55.5" stroke="#0F172A" stroke-width="1.8"/>
+                                <g class="char-eyes" style="animation-delay: 1.5s;">
+                                    <circle cx="86" cy="56.5" r="2" fill="#0F172A"/>
+                                    <circle cx="104" cy="56.5" r="2" fill="#0F172A"/>
+                                    <circle cx="86.7" cy="55.7" r="0.75" fill="#FFFFFF"/>
+                                    <circle cx="104.7" cy="55.7" r="0.75" fill="#FFFFFF"/>
+                                </g>
+                                <path d="M95 57V62L97 63" stroke="#B57852" stroke-width="1.5" stroke-linecap="round"/>
+                                <path d="M89 68.5Q95 73 101 68.5" stroke="#7C2D12" stroke-width="2.1" stroke-linecap="round"/>
+                            </g>
+
+                            <!-- Desk Surface -->
+                            <rect x="12" y="122" width="166" height="10" rx="5" fill="#CBD5E1"/>
+                            <rect x="12" y="122" width="166" height="3" rx="1.5" fill="#E2E8F0"/>
+
+                            <!-- Laptop & Active Typing Hands -->
+                            <g transform="translate(60, 93)">
+                                <rect x="0" y="0" width="70" height="27" rx="4.5" fill="#1E293B" stroke="#475569" stroke-width="1.8"/>
+                                <circle cx="35" cy="13.5" r="4.8" fill="#14B8A6" class="monitor-glow"/>
+                                <rect x="-6" y="26" width="82" height="4" rx="2" fill="#64748B"/>
+                                <circle cx="14" cy="25" r="4.2" fill="#E0A67E" class="char-type-l"/>
+                                <circle cx="56" cy="25" r="4.2" fill="#E0A67E" class="char-type-r"/>
+                            </g>
+                        </svg>
+                    </div>
+                    <div class="mt-2.5 flex items-center justify-between text-xs text-slate-600">
+                        <span class="font-semibold text-navy-800">Core Pipeline &amp; Demos</span>
+                        <span class="px-2 py-0.5 rounded bg-teal-100 text-teal-900 font-bold">5 Hrs Flexi</span>
+                    </div>
+                </div>
+
+                <!-- SHIFT 3: MID-DAY SHIFT (2:00 PM - 7:00 PM) -->
+                <div id="shift-card-3" class="shift-card shift-card-active scroll-stagger-item rounded-2xl bg-gradient-to-b from-blue-50/90 via-white to-white border-2 border-blue-300 p-4 sm:p-5 relative overflow-hidden">
+                    <div class="flex items-start justify-between gap-2 mb-3">
+                        <div>
+                            <span id="badge-shift-3" class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-emerald-100 text-emerald-800 text-[11px] font-extrabold uppercase tracking-wide">
+                                <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-ping"></span>
+                                Active Shift
+                            </span>
+                            <h3 class="font-display text-xs font-extrabold text-blue-800 uppercase tracking-wider mt-1.5">Mid-Day Shift • Evening</h3>
+                            <div class="font-display text-lg sm:text-2xl font-extrabold text-navy-900">2:00 PM – 7:00 PM</div>
+                        </div>
+                        <svg class="w-11 h-11 sm:w-12 sm:h-12 shrink-0" viewBox="0 0 48 48" fill="none">
+                            <circle cx="24" cy="24" r="21" fill="#EFF6FF" stroke="#93C5FD" stroke-width="2"/>
+                            <path d="M24 24 L38 16 A16 16 0 0 1 16 38 Z" fill="#2563EB" fill-opacity="0.28"/>
+                            <line id="clock3-hour" x1="24" y1="24" x2="33" y2="19" stroke="#0F172A" stroke-width="2.4" stroke-linecap="round"/>
+                            <line id="clock3-min" x1="24" y1="24" x2="24" y2="10" stroke="#2563EB" stroke-width="1.8" stroke-linecap="round"/>
+                            <circle cx="24" cy="24" r="2.2" fill="#0F172A"/>
+                        </svg>
+                    </div>
+
+                    <!-- Detailed Realistic Character 3: Evening Sales Closer with KPI Board & Tablet -->
+                    <div class="rounded-xl bg-gradient-to-b from-blue-100/50 to-slate-100/70 border border-blue-200/70 pt-3 px-3 pb-0 flex flex-col items-center relative">
+                        <div id="speech-shift-3" class="float-bubble absolute top-2 right-2.5 px-2.5 py-1 rounded-lg bg-white border border-blue-200 shadow-xs text-[10px] font-extrabold text-blue-900 z-10" style="animation-delay: 1.4s;">
+                            "Closing deals till 7 PM!"
+                        </div>
+
+                        <svg class="w-48 h-36 overflow-visible" viewBox="0 0 190 140" fill="none">
+                            <defs>
+                                <linearGradient id="skin3" x1="75" y1="32" x2="115" y2="82" gradientUnits="userSpaceOnUse">
+                                    <stop offset="0%" stop-color="#CE926B"/>
+                                    <stop offset="100%" stop-color="#B0744F"/>
+                                </linearGradient>
+                            </defs>
+                            <!-- Office Glass Partition & Sales KPI Whiteboard -->
+                            <rect x="16" y="12" width="158" height="94" rx="10" fill="#EFF6FF" fill-opacity="0.7" stroke="#BFDBFE" stroke-width="1.5"/>
+                            <rect x="23" y="22" width="34" height="25" rx="4" fill="#FFFFFF" stroke="#93C5FD" stroke-width="1.2"/>
+                            <path d="M28 41L35 34L40 37L50 28" stroke="#10B981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+
+                            <!-- Office Chair -->
+                            <rect x="64" y="64" width="62" height="58" rx="14" fill="#1E293B"/>
+
+                            <!-- Torso -->
+                            <g class="char-breathe" style="animation-delay: 0.4s;">
+                                <path d="M56 122C56 101 70 91 95 91C120 91 134 101 134 122H56Z" fill="#1D4ED8"/>
+                                <path d="M83 91L95 107L107 91H83Z" fill="#DBEAFE"/>
+                                <rect x="88" y="77" width="14" height="17" rx="6" fill="#AC714D"/>
+                            </g>
+
+                            <!-- Friendly Wave -->
+                            <g class="char-wave">
+                                <path d="M129 108L147 88" stroke="#1D4ED8" stroke-width="9" stroke-linecap="round"/>
+                                <circle cx="149" cy="85" r="6" fill="#C48761"/>
+                            </g>
+
+                            <!-- Detailed Head, Curly Hair, Eyes & Smile -->
+                            <g class="char-nod" style="animation-delay: 1.2s;">
+                                <circle cx="78" cy="44" r="10.5" fill="#1C1917"/>
+                                <circle cx="95" cy="36" r="12.5" fill="#1C1917"/>
+                                <circle cx="112" cy="44" r="10.5" fill="#1C1917"/>
+                                <circle cx="75" cy="56" r="8.5" fill="#1C1917"/>
+                                <circle cx="115" cy="56" r="8.5" fill="#1C1917"/>
+                                <path d="M77 52C77 41 85 34 95 34C105 34 113 41 113 52V63C113 74 105 82 95 82C85 82 77 74 77 63V52Z" fill="url(#skin3)"/>
+                                <path d="M83 51.5Q87 49.5 91 51.5" stroke="#1C1917" stroke-width="1.8" stroke-linecap="round"/>
+                                <path d="M99 51.5Q103 49.5 107 51.5" stroke="#1C1917" stroke-width="1.8" stroke-linecap="round"/>
+                                <g class="char-eyes" style="animation-delay: 2.3s;">
+                                    <ellipse cx="87" cy="56.5" rx="3.1" ry="2.5" fill="#FFFFFF"/>
+                                    <ellipse cx="103" cy="56.5" rx="3.1" ry="2.5" fill="#FFFFFF"/>
+                                    <circle cx="87.2" cy="56.5" r="2" fill="#0F172A"/>
+                                    <circle cx="103.2" cy="56.5" r="2" fill="#0F172A"/>
+                                    <circle cx="88" cy="55.7" r="0.75" fill="#FFFFFF"/>
+                                    <circle cx="104" cy="55.7" r="0.75" fill="#FFFFFF"/>
+                                </g>
+                                <path d="M95 57V62L97 63" stroke="#9B603D" stroke-width="1.5" stroke-linecap="round"/>
+                                <path d="M88 67.5Q95 73.5 102 67.5" stroke="#451A03" stroke-width="2.2" stroke-linecap="round"/>
+                            </g>
+
+                            <!-- Desk Surface -->
+                            <rect x="12" y="122" width="166" height="10" rx="5" fill="#CBD5E1"/>
+                            <rect x="12" y="122" width="166" height="3" rx="1.5" fill="#E2E8F0"/>
+
+                            <!-- CRM Tablet on Stand -->
+                            <g transform="translate(28, 96)">
+                                <rect x="0" y="2" width="32" height="22" rx="4" transform="rotate(-8 0 2)" fill="#0F172A" stroke="#3B82F6" stroke-width="1.8"/>
+                                <circle cx="16" cy="12" r="3" fill="#34D399" class="monitor-glow"/>
+                            </g>
+                        </svg>
+                    </div>
+                    <div class="mt-2.5 flex items-center justify-between text-xs text-slate-600">
+                        <span class="font-semibold text-navy-800">Evening Closings &amp; Follow-ups</span>
+                        <span class="px-2 py-0.5 rounded bg-blue-100 text-blue-900 font-bold">5 Hrs Flexi</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Interactive Live Day Timeline Scrubber & Overlapping Coverage Gantt -->
+            <div class="rounded-2xl bg-navy-900 text-white p-4 sm:p-5 border border-slate-800">
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-3">
+                    <div class="flex items-center gap-2">
+                        <span class="px-2 py-0.5 rounded bg-teal-500/20 text-teal-300 text-[11px] font-bold uppercase tracking-wider">Office Timeline</span>
+                        <span class="text-xs sm:text-sm font-semibold text-slate-200">Tap any hour or drag slider to inspect active coverage:</span>
+                    </div>
+                    <span id="coverageSummaryBadge" class="text-xs font-extrabold text-emerald-300 bg-emerald-500/15 border border-emerald-400/30 px-3 py-1 rounded-full self-start sm:self-auto">
+                        3 of 3 Shifts Active (Peak Overlap)
+                    </span>
+                </div>
+
+                <!-- Range Scrubber -->
+                <div class="px-1 mb-1 no-print">
+                    <input id="hourSlider" type="range" min="10" max="18.75" step="0.25" value="14" oninput="manualScrubHour(this.value)" class="time-scrubber w-full" aria-label="Office Shift Hour Slider">
+                </div>
+
+                <!-- Touch-Friendly Hour Jump Buttons (Responsive on Phone, Tablet & Laptop) -->
+                <div class="grid grid-cols-5 sm:grid-cols-10 gap-1 text-[11px] font-bold text-slate-400 mb-3 select-none">
+                    <button type="button" onclick="manualScrubHour(10)" class="min-h-[36px] rounded-lg hover:bg-white/10 text-center sm:text-left px-1 hover:text-amber-300 transition cursor-pointer">10 AM</button>
+                    <button type="button" onclick="manualScrubHour(11)" class="min-h-[36px] rounded-lg hover:bg-white/10 text-center sm:text-left px-1 hover:text-amber-300 transition cursor-pointer">11 AM</button>
+                    <button type="button" onclick="manualScrubHour(12)" class="min-h-[36px] rounded-lg hover:bg-white/10 text-center sm:text-left px-1 hover:text-teal-300 transition cursor-pointer">12 PM</button>
+                    <button type="button" onclick="manualScrubHour(13)" class="min-h-[36px] rounded-lg hover:bg-white/10 text-center sm:text-left px-1 hover:text-teal-300 transition cursor-pointer">1 PM</button>
+                    <button type="button" onclick="manualScrubHour(14)" class="min-h-[36px] rounded-lg bg-white/10 text-center sm:text-left px-1 text-amber-300 hover:text-amber-200 transition cursor-pointer">2 PM ★</button>
+                    <button type="button" onclick="manualScrubHour(15)" class="min-h-[36px] rounded-lg hover:bg-white/10 text-center sm:text-left px-1 hover:text-teal-300 transition cursor-pointer">3 PM</button>
+                    <button type="button" onclick="manualScrubHour(16)" class="min-h-[36px] rounded-lg hover:bg-white/10 text-center sm:text-left px-1 hover:text-blue-300 transition cursor-pointer">4 PM</button>
+                    <button type="button" onclick="manualScrubHour(17)" class="min-h-[36px] rounded-lg hover:bg-white/10 text-center sm:text-left px-1 hover:text-blue-300 transition cursor-pointer">5 PM</button>
+                    <button type="button" onclick="manualScrubHour(18)" class="min-h-[36px] rounded-lg hover:bg-white/10 text-center sm:text-left px-1 hover:text-blue-300 transition cursor-pointer">6 PM</button>
+                    <button type="button" onclick="manualScrubHour(18.75)" class="min-h-[36px] rounded-lg hover:bg-white/10 text-center sm:text-right px-1 hover:text-blue-300 transition cursor-pointer">7 PM</button>
+                </div>
+
+                <!-- Overlapping Coverage Bars -->
+                <div class="relative space-y-2 pt-1">
+                    <div id="timelineNeedle" style="left: 44.44%;" class="absolute top-0 bottom-0 w-0.5 bg-amber-400 shadow-[0_0_8px_#FBBF24] z-20 pointer-events-none transition-[left] duration-200 ease-out">
+                        <div class="w-2.5 h-2.5 rounded-full bg-amber-400 -ml-[4px] -mt-1"></div>
+                    </div>
+                    <div class="relative h-7 w-full bg-slate-800 rounded-lg overflow-hidden">
+                        <div style="left: 0%; width: 55.55%;" class="absolute inset-y-0 bg-gradient-to-r from-amber-500 to-amber-400 rounded-lg flex items-center px-2.5 sm:px-3 text-[10px] sm:text-[11px] font-extrabold text-navy-950 whitespace-nowrap">
+                            Morning Shift (10 AM – 3 PM)
+                        </div>
+                    </div>
+                    <div class="relative h-7 w-full bg-slate-800 rounded-lg overflow-hidden">
+                        <div style="left: 22.22%; width: 55.55%;" class="absolute inset-y-0 bg-gradient-to-r from-teal-500 to-emerald-400 rounded-lg flex items-center px-2.5 sm:px-3 text-[10px] sm:text-[11px] font-extrabold text-navy-950 whitespace-nowrap">
+                            Second Shift (12 PM – 5 PM)
+                        </div>
+                    </div>
+                    <div class="relative h-7 w-full bg-slate-800 rounded-lg overflow-hidden">
+                        <div style="left: 44.44%; width: 55.55%;" class="absolute inset-y-0 bg-gradient-to-r from-blue-600 to-indigo-500 rounded-lg flex items-center px-2.5 sm:px-3 text-[10px] sm:text-[11px] font-extrabold text-white whitespace-nowrap">
+                            Mid-Day Shift (2 PM – 7 PM)
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================================= -->
+        <!-- SECTION 02: CLEAN WHATSAPP GROUP & EOD TRACKER WORKFLOW   -->
+        <!-- ========================================================= -->
+        <section id="section-data" class="pro-card reveal-block rounded-3xl p-4 sm:p-7 scroll-mt-20">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-6">
+                <div class="flex items-center gap-3.5">
+                    <div class="w-10 h-10 rounded-2xl bg-navy-900 text-white font-display font-extrabold flex items-center justify-center shadow-sm shrink-0">
+                        02
+                    </div>
+                    <div>
+                        <h2 class="font-display text-base sm:text-xl font-extrabold text-navy-900">Daily Attendance &amp; EOD Reporting Protocol</h2>
+                        <p class="text-xs sm:text-sm text-slate-600">Standard two-step daily transparency flow via WhatsApp Group &amp; EOD Tracker Sheet.</p>
+                    </div>
+                </div>
+                <span class="inline-flex items-center gap-1.5 text-xs font-extrabold text-emerald-800 bg-emerald-50 border border-emerald-200 px-3 py-1.5 rounded-xl self-start sm:self-auto">
+                    <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                    100% Transparent Shift Audit
+                </span>
+            </div>
+
+            <!-- Dynamic Pictographical 2-Step Workflow -->
+            <div class="grid grid-cols-1 lg:grid-cols-11 gap-4 lg:gap-3 items-center">
+
+                <!-- STEP A: WHATSAPP GROUP LOGIN, LOG-OFF & LEAVE UPDATES -->
+                <div class="lg:col-span-5 rounded-2xl bg-gradient-to-br from-emerald-50/80 via-white to-teal-50/40 border-2 border-emerald-200/90 p-5 sm:p-6 hover:border-emerald-400 transition-all">
+                    <div class="flex items-center justify-between gap-2 mb-4">
+                        <span class="px-3 py-1 rounded-lg bg-emerald-600 text-white text-[11px] font-extrabold uppercase tracking-wider">Step A • Team Group</span>
+                        <span class="text-xs font-bold text-emerald-800 bg-emerald-100/80 px-2.5 py-0.5 rounded-full">WhatsApp Update</span>
+                    </div>
+
+                    <!-- Pictographical Animated Illustration: Agent + WhatsApp Group Check-In / Log-Off -->
+                    <div class="rounded-2xl bg-white border border-emerald-100 p-4 mb-4 shadow-2xs">
+                        <svg class="w-full h-36" viewBox="0 0 320 135" fill="none">
+                            <rect x="8" y="10" width="304" height="115" rx="14" fill="#F0FDF4" fill-opacity="0.6"/>
+                            <!-- Illustrated Sales Agent Posting Update -->
+                            <g transform="translate(18, 16)">
+                                <g class="char-breathe">
+                                    <path d="M16 102C16 82 28 73 46 73C64 73 76 82 76 102H16Z" fill="#0F766E"/>
+                                    <path d="M37 73L46 89L55 73H37Z" fill="#FFFFFF"/>
+                                    <rect x="40" y="60" width="12" height="14" rx="5" fill="#E8B892"/>
+                                </g>
+                                <g class="char-nod">
+                                    <circle cx="46" cy="41" r="17" fill="#F1C29B"/>
+                                    <path d="M29 38C30 25 38 20 49 21C58 22 63 28 63 36C56 31 46 30 36 33C32 34 30 36 29 38Z" fill="#1E293B"/>
+                                    <g class="char-eyes">
+                                        <circle cx="40" cy="41" r="2" fill="#0F172A"/>
+                                        <circle cx="52" cy="41" r="2" fill="#0F172A"/>
+                                    </g>
+                                    <path d="M41 49Q46 53 51 49" stroke="#7C2D12" stroke-width="2" stroke-linecap="round"/>
+                                </g>
+                                <!-- Smartphone in Hand -->
+                                <rect x="62" y="58" width="18" height="30" rx="4" fill="#0F172A" stroke="#10B981" stroke-width="1.8"/>
+                                <circle cx="71" cy="73" r="3" fill="#34D399" class="monitor-glow"/>
+                            </g>
+
+                            <!-- Animated Signal Wave to WhatsApp Group Card -->
+                            <line x1="104" y1="68" x2="136" y2="68" stroke="#10B981" stroke-width="2.5" class="animate-flow-line"/>
+                            <path d="M132 63L140 68L132 73" stroke="#059669" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+
+                            <!-- WhatsApp Group Card -->
+                            <g transform="translate(146, 18)">
+                                <rect x="0" y="0" width="154" height="98" rx="14" fill="#FFFFFF" stroke="#34D399" stroke-width="2"/>
+                                <rect x="0" y="0" width="154" height="28" rx="14" fill="#059669"/>
+                                <rect x="0" y="16" width="154" height="12" fill="#059669"/>
+                                <circle cx="18" cy="14" r="7" fill="#FFFFFF"/>
+                                <path d="M15.5 12.5C15.5 12 16 11.5 16.5 11.5H17.5L18.2 13L17.5 13.8C18 14.7 18.8 15.5 19.7 16L20.5 15.3L22 16V17C22 17.5 21.5 18 21 18C17.8 18 15.5 15.7 15.5 12.5Z" fill="#059669"/>
+                                <text x="31" y="17.5" fill="#FFFFFF" font-size="9.5" font-weight="800" font-family="Inter, sans-serif">Sales Team WhatsApp</text>
+
+                                <g transform="translate(12, 36)">
+                                    <rect x="0" y="0" width="130" height="15" rx="4" fill="#ECFDF5"/>
+                                    <circle cx="9" cy="7.5" r="3" fill="#10B981"/>
+                                    <text x="17" y="10.5" fill="#065F46" font-size="8.5" font-weight="700" font-family="Inter, sans-serif">1. Login Timing Reported</text>
+                                </g>
+                                <g transform="translate(12, 55)">
+                                    <rect x="0" y="0" width="130" height="15" rx="4" fill="#F0FDFA"/>
+                                    <circle cx="9" cy="7.5" r="3" fill="#0D9488"/>
+                                    <text x="17" y="10.5" fill="#115E59" font-size="8.5" font-weight="700" font-family="Inter, sans-serif">2. Log-Off Timing Posted</text>
+                                </g>
+                                <g transform="translate(12, 74)">
+                                    <rect x="0" y="0" width="130" height="15" rx="4" fill="#FFFBEB"/>
+                                    <circle cx="9" cy="7.5" r="3" fill="#F59E0B"/>
+                                    <text x="17" y="10.5" fill="#92400E" font-size="8.5" font-weight="700" font-family="Inter, sans-serif">3. Leave Status Updated</text>
+                                </g>
+                            </g>
+                        </svg>
+                    </div>
+
+                    <h3 class="font-display text-base sm:text-lg font-extrabold text-navy-900 mb-1.5">
+                        WhatsApp Group Check-In &amp; Log-Off
+                    </h3>
+                    <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                        Every sales agent reports their exact <strong>Login Time</strong>, <strong>Log-Off Time</strong>, and any <strong>Leave Updates</strong> directly in the official team WhatsApp group.
+                    </p>
+                </div>
+
+                <!-- CENTER ANIMATED DATA STREAM CONNECTOR -->
+                <div class="lg:col-span-1 flex flex-col items-center justify-center py-1">
+                    <!-- Desktop/Laptop Horizontal Glowing Stream -->
+                    <svg class="hidden lg:block w-full h-16" viewBox="0 0 80 48" fill="none">
+                        <line x1="4" y1="24" x2="66" y2="24" stroke="#0D9488" stroke-width="3" class="animate-flow-line"/>
+                        <path d="M60 16L72 24L60 32" stroke="#0F766E" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                        <circle r="4" fill="#F59E0B">
+                            <animateMotion dur="1.8s" repeatCount="indefinite" path="M6,24 L68,24"/>
+                        </circle>
+                    </svg>
+                    <!-- Mobile/Tablet Vertical Glowing Stream -->
+                    <svg class="lg:hidden w-12 h-11" viewBox="0 0 40 44" fill="none">
+                        <line x1="20" y1="2" x2="20" y2="34" stroke="#0D9488" stroke-width="3" class="animate-flow-line"/>
+                        <path d="M12 28L20 38L28 28" stroke="#0F766E" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                        <circle r="4" fill="#F59E0B">
+                            <animateMotion dur="1.6s" repeatCount="indefinite" path="M20,4 L20,36"/>
+                        </circle>
+                    </svg>
+                </div>
+
+                <!-- STEP B: EOD TRACKER SHEET SYNC -->
+                <div class="lg:col-span-5 rounded-2xl bg-gradient-to-br from-blue-50/80 via-white to-indigo-50/40 border-2 border-blue-200/90 p-5 sm:p-6 hover:border-blue-400 transition-all">
+                    <div class="flex items-center justify-between gap-2 mb-4">
+                        <span class="px-3 py-1 rounded-lg bg-blue-600 text-white text-[11px] font-extrabold uppercase tracking-wider">Step B • Daily Record</span>
+                        <span class="text-xs font-bold text-blue-800 bg-blue-100/80 px-2.5 py-0.5 rounded-full">EOD Sheet</span>
+                    </div>
+
+                    <!-- Pictographical Animated Illustration: EOD Tracker Sheet with Animated Bars & Checkmarks -->
+                    <div class="rounded-2xl bg-white border border-blue-100 p-4 mb-4 shadow-2xs">
+                        <svg class="w-full h-36" viewBox="0 0 320 135" fill="none">
+                            <rect x="8" y="10" width="304" height="115" rx="14" fill="#EFF6FF" fill-opacity="0.6"/>
+
+                            <!-- Spreadsheet Document Card -->
+                            <g transform="translate(22, 16)">
+                                <rect x="0" y="0" width="192" height="102" rx="12" fill="#FFFFFF" stroke="#3B82F6" stroke-width="2"/>
+                                <rect x="0" y="0" width="192" height="26" rx="12" fill="#1E3A8A"/>
+                                <rect x="0" y="14" width="192" height="12" fill="#1E3A8A"/>
+                                <rect x="12" y="8" width="12" height="10" rx="2" fill="#34D399"/>
+                                <text x="30" y="16.5" fill="#FFFFFF" font-size="9.5" font-weight="800" font-family="Inter, sans-serif">EOD Tracker Sheet</text>
+
+                                <!-- Animated Spreadsheet Rows -->
+                                <g transform="translate(12, 34)">
+                                    <rect x="0" y="0" width="64" height="7" rx="3.5" fill="#CBD5E1"/>
+                                    <rect x="74" y="0" width="58" height="7" rx="3.5" fill="#93C5FD" class="monitor-glow"/>
+                                    <circle cx="156" cy="3.5" r="6" fill="#D1FAE5"/>
+                                    <path d="M153 3.5L155.2 5.7L159.5 1.5" stroke="#059669" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                                </g>
+                                <g transform="translate(12, 54)">
+                                    <rect x="0" y="0" width="56" height="7" rx="3.5" fill="#CBD5E1"/>
+                                    <rect x="74" y="0" width="66" height="7" rx="3.5" fill="#5EEAD4" class="monitor-glow" style="animation-delay: 0.6s;"/>
+                                    <circle cx="156" cy="3.5" r="6" fill="#D1FAE5"/>
+                                    <path d="M153 3.5L155.2 5.7L159.5 1.5" stroke="#059669" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                                </g>
+                                <g transform="translate(12, 74)">
+                                    <rect x="0" y="0" width="60" height="7" rx="3.5" fill="#CBD5E1"/>
+                                    <rect x="74" y="0" width="52" height="7" rx="3.5" fill="#FCD34D" class="monitor-glow" style="animation-delay: 1.2s;"/>
+                                    <circle cx="156" cy="3.5" r="6" fill="#D1FAE5"/>
+                                    <path d="M153 3.5L155.2 5.7L159.5 1.5" stroke="#059669" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                                </g>
+                            </g>
+
+                            <!-- Right Summary Analytics Card -->
+                            <g transform="translate(226, 24)" class="char-breathe">
+                                <rect x="0" y="0" width="74" height="86" rx="12" fill="#0F172A"/>
+                                <text x="37" y="18" text-anchor="middle" fill="#93C5FD" font-size="8" font-weight="800" font-family="Inter, sans-serif">DAILY EOD</text>
+                                <rect x="14" y="48" width="10" height="24" rx="3" fill="#3B82F6"/>
+                                <rect x="32" y="36" width="10" height="36" rx="3" fill="#14B8A6"/>
+                                <rect x="50" y="28" width="10" height="44" rx="3" fill="#F59E0B"/>
+                            </g>
+                        </svg>
+                    </div>
+
+                    <h3 class="font-display text-base sm:text-lg font-extrabold text-navy-900 mb-1.5">
+                        EOD Tracker Sheet Maintenance
+                    </h3>
+                    <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                        Agents maintain complete daily shift hours, call activity, and sales updates in the <strong>EOD Tracker Sheet</strong>—giving leadership an accurate single source of truth.
+                    </p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ========================================================= -->
+        <!-- SECTION 03: ESCALATION & RETENTION PROTECTION FLOWCHART   -->
+        <!-- ========================================================= -->
+        <section id="section-escalation" class="pro-card reveal-block rounded-3xl p-4 sm:p-7 scroll-mt-20">
+            <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4 mb-6">
+                <div class="flex items-center gap-3.5">
+                    <div class="w-10 h-10 rounded-2xl bg-gradient-to-br from-amber-500 to-rose-500 text-white font-display font-extrabold flex items-center justify-center shadow-sm shrink-0">
+                        03
+                    </div>
+                    <div>
+                        <h2 class="font-display text-base sm:text-xl font-extrabold text-navy-900">Questioning Authority &amp; Communication Method</h2>
+                        <p class="text-xs sm:text-sm text-slate-600">How MD, CEO, Admin &amp; Departments resolve questions while protecting agent morale &amp; retention</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Live Simulation Banner -->
+            <div id="simBanner" class="hidden mb-5 px-4 py-3 rounded-2xl bg-navy-900 text-white text-xs sm:text-sm font-semibold flex flex-col sm:flex-row sm:items-center justify-between gap-2 shadow-md">
+                <div class="flex items-center gap-2.5">
+                    <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-ping shrink-0"></span>
+                    <span id="simStatusText">Simulating leadership query workflow...</span>
+                </div>
+                <span id="simStepBadge" class="px-3 py-1 rounded-full bg-white/15 text-amber-300 font-extrabold text-xs self-start sm:self-auto shrink-0">Step 1/3</span>
+            </div>
+
+            <!-- 3-Step Character Escalation Cards -->
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-4 sm:gap-5 mb-6">
+
+                <!-- STEP 1: CHECK SHIFT DATA FIRST -->
+                <div id="protocol-node-1" class="protocol-node scroll-stagger-item rounded-2xl bg-white border-2 border-slate-200 p-4 sm:p-5 flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="px-3 py-1 rounded-lg bg-navy-900 text-white text-[11px] font-extrabold uppercase tracking-wider">Step 1 • Data First</span>
+                            <span class="text-xs font-extrabold text-slate-400">01 / 03</span>
+                        </div>
+
+                        <div class="rounded-xl bg-slate-50 border border-slate-200/80 p-3 mb-4">
+                            <svg class="w-full h-36" viewBox="0 0 300 130" fill="none">
+                                <!-- Leadership Character (MD / CEO / Admin) -->
+                                <g transform="translate(10, 8)">
+                                    <g class="char-breathe">
+                                        <path d="M16 112C16 90 30 80 50 80C70 80 84 90 84 112H16Z" fill="#0F172A"/>
+                                        <path d="M40 80L50 102L60 80H40Z" fill="#FFFFFF"/>
+                                        <path d="M48 84L50 100L52 84L50 81L48 84Z" fill="#2563EB"/>
+                                        <rect x="43" y="66" width="14" height="16" rx="6" fill="#E8B892"/>
+                                    </g>
+                                    <g class="char-nod">
+                                        <circle cx="32" cy="49" r="4" fill="#E8B892"/>
+                                        <circle cx="68" cy="49" r="4" fill="#E8B892"/>
+                                        <path d="M31 44C31 29 40 22 50 22C60 22 69 29 69 44V50H31V44Z" fill="#334155"/>
+                                        <path d="M33 46C33 35 40 28 50 28C60 28 67 35 67 46V56C67 66 59.5 74 50 74C40.5 74 33 66 33 56V46Z" fill="#EFC39E"/>
+                                        <path d="M32 42C36 30 46 26 58 28C64 29 68 34 68 41C61 36 51 35 41 37C36 38 33 40 32 42Z" fill="#1E293B"/>
+                                        <g class="char-eyes">
+                                            <ellipse cx="43" cy="49" rx="2.8" ry="2.2" fill="#FFFFFF"/>
+                                            <ellipse cx="57" cy="49" rx="2.8" ry="2.2" fill="#FFFFFF"/>
+                                            <circle cx="43" cy="49" r="1.8" fill="#0F172A"/>
+                                            <circle cx="57" cy="49" r="1.8" fill="#0F172A"/>
+                                        </g>
+                                        <path d="M45 60Q50 63 55 60" stroke="#7C2D12" stroke-width="2" stroke-linecap="round"/>
+                                    </g>
+                                    <text x="50" y="121" text-anchor="middle" fill="#0F172A" font-size="9.5" font-weight="800" font-family="Inter, sans-serif">MD / CEO / Admin</text>
+                                </g>
+
+                                <line x1="102" y1="64" x2="148" y2="64" stroke="#2563EB" stroke-width="2.5" class="animate-flow-line"/>
+                                <path d="M143 59L151 64L143 69" stroke="#2563EB" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+
+                                <!-- Shift Logs + Scanning Loupe -->
+                                <g transform="translate(158, 16)">
+                                    <rect x="0" y="4" width="130" height="84" rx="14" fill="#FFFFFF" stroke="#3B82F6" stroke-width="2"/>
+                                    <rect x="14" y="18" width="58" height="7" rx="3.5" fill="#2563EB"/>
+                                    <rect x="14" y="32" width="76" height="5" rx="2.5" fill="#BFDBFE"/>
+                                    <rect x="14" y="43" width="68" height="5" rx="2.5" fill="#BFDBFE"/>
+                                    <rect x="14" y="54" width="72" height="5" rx="2.5" fill="#A7F3D0"/>
+                                    <rect x="14" y="65" width="54" height="5" rx="2.5" fill="#A7F3D0"/>
+                                    <g class="char-breathe">
+                                        <circle cx="98" cy="46" r="17" fill="#FEF3C7" fill-opacity="0.7" stroke="#F59E0B" stroke-width="3.2"/>
+                                        <line x1="110" y1="58" x2="122" y2="70" stroke="#D97706" stroke-width="4" stroke-linecap="round"/>
+                                        <path d="M92 46L96 50L104 42" stroke="#059669" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </g>
+                                    <text x="65" y="103" text-anchor="middle" fill="#1D4ED8" font-size="9.5" font-weight="800" font-family="Inter, sans-serif">WhatsApp &amp; EOD Sheet</text>
+                                </g>
+                            </svg>
+                        </div>
+
+                        <h3 class="font-display text-base sm:text-lg font-extrabold text-navy-900 mb-1.5">
+                            Check Shift Data First
+                        </h3>
+                        <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                            Departments must first verify the <strong>WhatsApp Group Logs</strong> and <strong>EOD Tracker Sheet</strong> to understand the agent's flexi-shift schedule before asking any questions.
+                        </p>
+                    </div>
+                    <div class="mt-4 pt-3 border-t border-slate-100 flex items-center gap-2 text-xs font-bold text-blue-700">
+                        <span class="w-5 h-5 rounded-full bg-blue-100 flex items-center justify-center shrink-0">✓</span>
+                        <span>Eliminates unnecessary timing questions</span>
+                    </div>
+                </div>
+
+                <!-- STEP 2: OPERATIONAL MANAGER SHIELD BRIDGE -->
+                <div id="protocol-node-2" class="protocol-node scroll-stagger-item rounded-2xl bg-white border-2 border-teal-400 p-4 sm:p-5 flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="px-3 py-1 rounded-lg bg-teal-600 text-white text-[11px] font-extrabold uppercase tracking-wider">Step 2 • Manager Bridge</span>
+                            <span class="text-xs font-extrabold text-slate-400">02 / 03</span>
+                        </div>
+
+                        <div class="rounded-xl bg-teal-50/70 border border-teal-200/80 p-3 mb-4">
+                            <svg class="w-full h-36" viewBox="0 0 300 130" fill="none">
+                                <!-- Departments -->
+                                <g transform="translate(4, 24)">
+                                    <rect x="0" y="0" width="58" height="58" rx="14" fill="#1E293B"/>
+                                    <circle cx="29" cy="21" r="8" fill="#94A3B8"/>
+                                    <path d="M15 46C15 38 21 33 29 33C37 33 43 38 43 46" stroke="#94A3B8" stroke-width="2.8" stroke-linecap="round"/>
+                                    <text x="29" y="72" text-anchor="middle" fill="#334155" font-size="8.5" font-weight="800" font-family="Inter, sans-serif">Departments</text>
+                                </g>
+
+                                <line x1="65" y1="53" x2="96" y2="53" stroke="#0D9488" stroke-width="2.5" class="animate-flow-line"/>
+                                <path d="M92 48L99 53L92 58" stroke="#0D9488" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+
+                                <!-- Operational Manager Character + Shield -->
+                                <g transform="translate(102, 4)">
+                                    <ellipse cx="48" cy="54" rx="44" ry="48" fill="#14B8A6" fill-opacity="0.14"/>
+                                    <g class="char-breathe">
+                                        <path d="M16 96C16 76 29 67 48 67C67 67 80 76 80 96H16Z" fill="#0D9488"/>
+                                        <path d="M38 67L48 84L58 67H38Z" fill="#FFFFFF"/>
+                                        <rect x="42" y="54" width="12" height="14" rx="5" fill="#F1C29B"/>
+                                    </g>
+                                    <g class="char-nod">
+                                        <circle cx="32" cy="40" r="3.5" fill="#F1C29B"/>
+                                        <circle cx="64" cy="40" r="3.5" fill="#F1C29B"/>
+                                        <path d="M31 35C31 22 39 16 48 16C57 16 65 22 65 35V41H31V35Z" fill="#1E293B"/>
+                                        <path d="M33 37C33 27 39.5 21 48 21C56.5 21 63 27 63 37V46C63 55 56.5 62 48 62C39.5 62 33 55 33 46V37Z" fill="#F6C8A2"/>
+                                        <path d="M32 34C35 23 44 19 55 21C60 22 63 27 63 33C57 29 48 28 39 30C35 31 33 32 32 34Z" fill="#0F172A"/>
+                                        <g class="char-eyes">
+                                            <ellipse cx="42" cy="40" rx="2.5" ry="2" fill="#FFFFFF"/>
+                                            <ellipse cx="54" cy="40" rx="2.5" ry="2" fill="#FFFFFF"/>
+                                            <circle cx="42" cy="40" r="1.6" fill="#0F172A"/>
+                                            <circle cx="54" cy="40" r="1.6" fill="#0F172A"/>
+                                        </g>
+                                        <path d="M43 49Q48 53 53 49" stroke="#9A3412" stroke-width="2" stroke-linecap="round"/>
+                                    </g>
+                                    <g transform="translate(64, 54)">
+                                        <path d="M12 0L24 4.5V12C24 18.5 18.8 23.5 12 25C5.2 23.5 0 18.5 0 12V4.5L12 0Z" fill="#F59E0B" stroke="#FFFFFF" stroke-width="1.8"/>
+                                        <path d="M7.5 12.5L10.5 15.5L16.5 9.5" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </g>
+                                    <text x="48" y="109" text-anchor="middle" fill="#0F766E" font-size="9" font-weight="800" font-family="Inter, sans-serif">Operational Manager</text>
+                                </g>
+
+                                <line x1="198" y1="53" x2="226" y2="53" stroke="#10B981" stroke-width="2.5" class="animate-flow-line"/>
+                                <path d="M222 48L229 53L222 58" stroke="#10B981" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+
+                                <!-- Happy Sales Agent -->
+                                <g transform="translate(232, 18)">
+                                    <rect x="0" y="0" width="62" height="68" rx="14" fill="#FFFFFF" stroke="#10B981" stroke-width="2"/>
+                                    <g class="char-breathe">
+                                        <path d="M12 66C12 52 20 46 31 46C42 46 50 52 50 66H12Z" fill="#2563EB"/>
+                                        <circle cx="31" cy="28" r="11" fill="#E8B892"/>
+                                        <path d="M20 26C21 17 28 14 36 16C41 17 42 21 42 25C37 22 29 22 20 26Z" fill="#1E293B"/>
+                                        <g class="char-eyes">
+                                            <circle cx="27.5" cy="28" r="1.6" fill="#0F172A"/>
+                                            <circle cx="34.5" cy="28" r="1.6" fill="#0F172A"/>
+                                        </g>
+                                        <path d="M27 33Q31 36.5 35 33" stroke="#7C2D12" stroke-width="1.8" stroke-linecap="round"/>
+                                    </g>
+                                    <text x="31" y="81" text-anchor="middle" fill="#047857" font-size="8.5" font-weight="800" font-family="Inter, sans-serif">Happy Agent</text>
+                                </g>
+
+                                <!-- Blocked Direct Interrogation Line -->
+                                <path d="M33 102 Q 150 128 263 102" stroke="#F43F5E" stroke-width="1.8" stroke-dasharray="4 4"/>
+                                <g transform="translate(95, 111)">
+                                    <rect x="0" y="0" width="110" height="17" rx="8.5" fill="#FFE4E6" stroke="#FDA4AF" stroke-width="1"/>
+                                    <text x="55" y="11.5" text-anchor="middle" fill="#BE123C" font-size="8" font-weight="800" font-family="Inter, sans-serif">✕ No Direct Questioning</text>
+                                </g>
+                            </svg>
+                        </div>
+
+                        <h3 class="font-display text-base sm:text-lg font-extrabold text-navy-900 mb-1.5">
+                            Ask Operational Manager First
+                        </h3>
+                        <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                            Any operational question must be asked to the <strong>Operational Manager</strong> first—who then communicates with agents using established rapport.
+                        </p>
+                    </div>
+                    <div class="mt-4 pt-3 border-t border-slate-100">
+                        <div class="px-3 py-2 rounded-xl bg-amber-50 border border-amber-200 text-[11px] font-bold text-amber-900 flex items-start gap-2">
+                            <span class="text-amber-600 text-sm leading-none">★</span>
+                            <span>Avoids sudden agent frustration &amp; prevents employee turnover.</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- STEP 3: DM FIRST, CALL SECOND -->
+                <div id="protocol-node-3" class="protocol-node scroll-stagger-item rounded-2xl bg-white border-2 border-slate-200 p-4 sm:p-5 flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="px-3 py-1 rounded-lg bg-amber-500 text-navy-950 text-[11px] font-extrabold uppercase tracking-wider">Step 3 • Channel Rule</span>
+                            <span class="text-xs font-extrabold text-slate-400">03 / 03</span>
+                        </div>
+
+                        <div class="rounded-xl bg-amber-50/60 border border-amber-200/70 p-3 mb-4">
+                            <svg class="w-full h-36" viewBox="0 0 300 130" fill="none">
+                                <!-- DM First -->
+                                <g transform="translate(14, 18)">
+                                    <rect x="0" y="0" width="96" height="72" rx="18" fill="#0D9488"/>
+                                    <path d="M28 24C28 20.134 31.134 17 35 17H61C64.866 17 68 20.134 68 24V39C68 42.866 64.866 46 61 46H44L34 54V46H35C31.134 46 28 42.866 28 39V24Z" fill="#FFFFFF"/>
+                                    <circle cx="41" cy="31.5" r="2.6" fill="#0D9488" class="dot-1"/>
+                                    <circle cx="48" cy="31.5" r="2.6" fill="#0D9488" class="dot-2"/>
+                                    <circle cx="55" cy="31.5" r="2.6" fill="#0D9488" class="dot-3"/>
+                                    <text x="48" y="88" text-anchor="middle" fill="#0F766E" font-size="9.5" font-weight="800" font-family="Inter, sans-serif">1. Internal DM First</text>
+                                    <text x="48" y="100" text-anchor="middle" fill="#0D9488" font-size="8" font-weight="700" font-family="Inter, sans-serif">Mandatory First Step</text>
+                                </g>
+
+                                <!-- Conditional Arrow -->
+                                <g>
+                                    <line x1="116" y1="54" x2="184" y2="54" stroke="#F59E0B" stroke-width="2.5" class="animate-flow-slow"/>
+                                    <path d="M179 49L187 54L179 59" stroke="#D97706" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <rect x="115" y="24" width="70" height="20" rx="6" fill="#FEF3C7" stroke="#FCD34D" stroke-width="1.2"/>
+                                    <text x="150" y="37" text-anchor="middle" fill="#92400E" font-size="8" font-weight="800" font-family="Inter, sans-serif">If no DM reply</text>
+                                </g>
+
+                                <!-- Phone Call Second -->
+                                <g transform="translate(192, 18)">
+                                    <rect x="0" y="0" width="94" height="72" rx="18" fill="#FFFBEB" stroke="#F59E0B" stroke-width="2.2"/>
+                                    <g class="animate-phone-ring">
+                                        <circle cx="47" cy="36" r="18" fill="#FEF3C7"/>
+                                        <path d="M39 27C39 25.8954 39.8954 25 41 25H44.2C45.1 25 45.9 25.6 46.1 26.5L47.1 30.8C47.3 31.6 47 32.4 46.3 32.9L44.2 34.4C45.5 37.1 47.7 39.3 50.4 40.6L51.9 38.5C52.4 37.8 53.2 37.5 54 37.7L58.3 38.7C59.2 38.9 59.8 39.7 59.8 40.6V43.8C59.8 44.9 58.9 45.8 57.8 45.8C47.4 45.8 39 37.4 39 27Z" fill="#D97706"/>
+                                    </g>
+                                    <text x="47" y="88" text-anchor="middle" fill="#B45309" font-size="9.5" font-weight="800" font-family="Inter, sans-serif">2. Phone Call</text>
+                                    <text x="47" y="100" text-anchor="middle" fill="#D97706" font-size="8" font-weight="700" font-family="Inter, sans-serif">Only If No Response</text>
+                                </g>
+                            </svg>
+                        </div>
+
+                        <h3 class="font-display text-base sm:text-lg font-extrabold text-navy-900 mb-1.5">
+                            DM First, Call Second
+                        </h3>
+                        <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                            All internal communication must happen first via <strong>Direct Message (DM)</strong>. A phone call should be made <strong>only if there is no response</strong> to the DM.
+                        </p>
+                    </div>
+                    <div class="mt-4 pt-3 border-t border-slate-100 flex items-center gap-2 text-xs font-bold text-amber-800">
+                        <span class="w-5 h-5 rounded-full bg-amber-100 flex items-center justify-center shrink-0">✓</span>
+                        <span>Zero disruption during live client sales calls</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Interactive Retention Impact Comparison Box (Why This Protocol Matters) -->
+            <div class="rounded-2xl bg-slate-50 border border-slate-200 p-4 sm:p-5">
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-4">
+                    <div>
+                        <span class="text-[11px] font-extrabold uppercase tracking-wider text-teal-700">Leadership Impact Insight</span>
+                        <h3 class="font-display text-sm sm:text-base font-extrabold text-navy-900">Why Routing Through the Operational Manager Protects Retention</h3>
+                    </div>
+                    <div class="inline-flex rounded-xl bg-white border border-slate-200 p-1 w-full sm:w-auto no-print">
+                        <button type="button" id="compareGoodBtn" onclick="setRetentionView('filtered')" class="flex-1 sm:flex-initial min-h-[40px] px-3 py-1.5 rounded-lg bg-emerald-600 text-white text-xs font-extrabold transition cursor-pointer">
+                            ✓ Manager Filter
+                        </button>
+                        <button type="button" id="compareBadBtn" onclick="setRetentionView('direct')" class="flex-1 sm:flex-initial min-h-[40px] px-3 py-1.5 rounded-lg text-slate-600 hover:text-rose-700 text-xs font-bold transition cursor-pointer">
+                            ✕ Direct Interrogation
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Dynamic Comparison Visual with Rich Illustrated Character Expressions -->
+                <div id="retentionImpactPanel" class="rounded-xl bg-white border border-emerald-200 p-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 transition-all">
+                    <div class="flex items-start sm:items-center gap-3.5 sm:gap-4">
+                        <div id="retentionIconBox" class="w-14 h-14 rounded-2xl bg-emerald-100 flex items-center justify-center shrink-0 shadow-2xs">
+                            <!-- Rich Illustrated Happy Character Avatar -->
+                            <svg class="w-11 h-11" viewBox="0 0 48 48" fill="none">
+                                <circle cx="24" cy="24" r="21" fill="#FDE68A" stroke="#F59E0B" stroke-width="2"/>
+                                <path d="M13 19Q17 14 21 19" stroke="#78350F" stroke-width="2.4" stroke-linecap="round"/>
+                                <path d="M27 19Q31 14 35 19" stroke="#78350F" stroke-width="2.4" stroke-linecap="round"/>
+                                <ellipse cx="13" cy="25" rx="3.5" ry="2" fill="#FDA4AF" fill-opacity="0.7"/>
+                                <ellipse cx="35" cy="25" rx="3.5" ry="2" fill="#FDA4AF" fill-opacity="0.7"/>
+                                <path d="M15 28Q24 37 33 28" stroke="#78350F" stroke-width="2.6" stroke-linecap="round" fill="#FFFFFF"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <div id="retentionStatusTitle" class="font-display text-sm sm:text-base font-extrabold text-emerald-900">
+                                High Agent Morale, Trust &amp; Long-Term Retention
+                            </div>
+                            <p id="retentionStatusDesc" class="text-xs sm:text-sm text-slate-600 mt-0.5">
+                                Because the Operational Manager already shares strong rapport with the sales team, queries are resolved constructively—keeping agents focused, motivated, and loyal to Booknglow.
+                            </p>
+                        </div>
+                    </div>
+                    <div id="retentionMetricPill" class="px-4 py-2 rounded-xl bg-emerald-50 border border-emerald-200 text-center self-stretch sm:self-auto shrink-0">
+                        <div class="text-[10px] font-extrabold uppercase text-emerald-700">Attrition Risk</div>
+                        <div class="font-display text-sm font-extrabold text-emerald-900">Near Zero</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================================= -->
+        <!-- SECTION 04: MANAGER ABSENCE CONTINGENCY BANNER            -->
+        <!-- ========================================================= -->
+        <footer id="section-contingency" class="reveal-block rounded-3xl bg-gradient-to-r from-amber-50 via-white to-teal-50 border-2 border-amber-300 p-4 sm:p-6 shadow-sm scroll-mt-20">
+            <div class="flex items-start sm:items-center gap-3.5 sm:gap-4">
+                <div class="w-12 h-12 rounded-2xl bg-amber-500 text-navy-950 flex items-center justify-center shrink-0 shadow-xs">
+                    <svg class="w-7 h-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+                    </svg>
+                </div>
+                <div class="space-y-1">
+                    <div class="inline-flex items-center gap-1.5 text-[11px] font-extrabold uppercase tracking-wider text-amber-800">
+                        <span class="w-2 h-2 rounded-full bg-amber-500"></span>
+                        04 • Operational Manager Absence Contingency
+                    </div>
+                    <h3 class="font-display text-base sm:text-lg font-extrabold text-navy-900">
+                        When the Operational Manager is Absent / On Leave
+                    </h3>
+                    <p class="text-xs sm:text-sm text-slate-700 leading-relaxed max-w-4xl">
+                        Other departments may step in to manage operational requirements directly—ensuring <strong>zero disturbance to the sales workflow</strong> while maintaining calm, respectful DM-first communication without causing sudden frustration to agents.
+                    </p>
+                </div>
+            </div>
+        </footer>
+
+    </main>
+
+    <!-- ========================================================= -->
+    <!-- HIGH-PERFORMANCE 60FPS INTERACTIVE SCRIPT                 -->
+    <!-- ========================================================= -->
+    <script>
+        (function initAmbientCanvas() {
+            const canvas = document.getElementById('ambientParticleCanvas');
+            if (!canvas) return;
+            const ctx = canvas.getContext('2d');
+            if (!ctx) return;
+
+            let width = canvas.width = window.innerWidth;
+            let height = canvas.height = window.innerHeight;
+
+            window.addEventListener('resize', () => {
+                width = canvas.width = window.innerWidth;
+                height = canvas.height = window.innerHeight;
+            }, { passive: true });
+
+            const colors = ['rgba(13, 148, 136, 0.14)', 'rgba(37, 99, 235, 0.12)', 'rgba(245, 158, 11, 0.14)'];
+            const nodes = Array.from({ length: 18 }, (_, i) => ({
+                x: Math.random() * width,
+                y: Math.random() * height,
+                r: 2 + Math.random() * 3.5,
+                vx: (Math.random() - 0.5) * 0.35,
+                vy: (Math.random() - 0.5) * 0.35,
+                color: colors[i % colors.length]
+            }));
+
+            function render() {
+                ctx.clearRect(0, 0, width, height);
+                for (let i = 0; i < nodes.length; i++) {
+                    const n = nodes[i];
+                    n.x += n.vx;
+                    n.y += n.vy;
+                    if (n.x < 0 || n.x > width) n.vx *= -1;
+                    if (n.y < 0 || n.y > height) n.vy *= -1;
+
+                    ctx.beginPath();
+                    ctx.arc(n.x, n.y, n.r, 0, Math.PI * 2);
+                    ctx.fillStyle = n.color;
+                    ctx.fill();
+                }
+                requestAnimationFrame(render);
+            }
+            requestAnimationFrame(render);
+        })();
+
+        // Fluid Scroll Progress Bar & Architectural Office Parallax
+        (function initFluidScrollEffects() {
+            const progressBar = document.getElementById('scrollProgressBar');
+            const officeSvg = document.getElementById('officeAtmosphereSvg');
+            let ticking = false;
+
+            function onScroll() {
+                if (ticking) return;
+                ticking = true;
+                requestAnimationFrame(() => {
+                    const scrollTop = window.scrollY || document.documentElement.scrollTop;
+                    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+                    const progress = docHeight > 0 ? Math.min(100, Math.max(0, (scrollTop / docHeight) * 100)) : 0;
+
+                    if (progressBar) {
+                        progressBar.style.width = `${progress}%`;
+                    }
+                    if (officeSvg) {
+                        const parallaxY = Math.min(60, scrollTop * 0.06);
+                        officeSvg.style.transform = `translate3d(0, -${parallaxY}px, 0)`;
+                    }
+                    ticking = false;
+                });
+            }
+
+            window.addEventListener('scroll', onScroll, { passive: true });
+            onScroll();
+        })();
+
+        // IntersectionObserver for smooth section entrance
+        if ('IntersectionObserver' in window) {
+            const revealObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        revealObserver.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.08 });
+
+            document.querySelectorAll('.reveal-block').forEach(el => revealObserver.observe(el));
+        } else {
+            document.querySelectorAll('.reveal-block').forEach(el => el.classList.add('is-visible'));
+        }
+
+        // Simulation State (Speed locked at 3x)
+        let simHour = 14.0;
+        let isAutoPlaying = true;
+        const LOCKED_SIM_SPEED = 3;
+        let simTimer = null;
+
+        function formatHour(val) {
+            const hrs = Math.floor(val);
+            const mins = Math.round((val - hrs) * 60);
+            const minStr = mins === 0 ? '00' : mins < 10 ? `0${mins}` : `${mins}`;
+            const suffix = hrs >= 12 ? 'PM' : 'AM';
+            const displayHr = hrs > 12 ? hrs - 12 : hrs;
+            const hrStr = displayHr < 10 ? `0${displayHr}` : `${displayHr}`;
+            return `${hrStr}:${minStr} ${suffix}`;
+        }
+
+        function updateClockHands(hourVal) {
+            const hrDeg = ((hourVal % 12) / 12) * 360;
+            const minDeg = ((hourVal % 1) * 360);
+            [1, 2, 3].forEach(num => {
+                const hEl = document.getElementById(`clock${num}-hour`);
+                const mEl = document.getElementById(`clock${num}-min`);
+                if (hEl) hEl.setAttribute('transform', `rotate(${hrDeg} 24 24)`);
+                if (mEl) mEl.setAttribute('transform', `rotate(${minDeg} 24 24)`);
+            });
+        }
+
+        function updateCardState(num, isActive, activeQuote, restingQuote) {
+            const card = document.getElementById(`shift-card-${num}`);
+            const badge = document.getElementById(`badge-shift-${num}`);
+            const speech = document.getElementById(`speech-shift-${num}`);
+            if (!card || !badge) return;
+
+            if (isActive) {
+                card.classList.add('shift-card-active');
+                card.classList.remove('shift-card-resting');
+                badge.className = 'inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-emerald-100 text-emerald-800 text-[11px] font-extrabold uppercase tracking-wide';
+                badge.innerHTML = '<span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-ping"></span> Active Shift';
+                if (speech) speech.textContent = activeQuote;
+            } else {
+                card.classList.remove('shift-card-active');
+                card.classList.add('shift-card-resting');
+                badge.className = 'inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-slate-200 text-slate-600 text-[11px] font-bold uppercase tracking-wide';
+                badge.innerHTML = '<span class="w-1.5 h-1.5 rounded-full bg-slate-400"></span> Off-Shift';
+                if (speech) speech.textContent = restingQuote;
+            }
+        }
+
+        function updateHourSimulator(val) {
+            const parsed = parseFloat(val);
+            if (Number.isNaN(parsed)) return;
+            simHour = parsed;
+            const timeStr = formatHour(simHour);
+
+            const s1Active = simHour >= 10 && simHour < 15;
+            const s2Active = simHour >= 12 && simHour < 17;
+            const s3Active = simHour >= 14 && simHour <= 19;
+            const activeCount = [s1Active, s2Active, s3Active].filter(Boolean).length;
+
+            const slider = document.getElementById('hourSlider');
+            if (slider) slider.value = simHour;
+
+            const heroClock = document.getElementById('heroClockDisplay');
+            if (heroClock) heroClock.textContent = timeStr;
+
+            const heroShifts = document.getElementById('heroActiveShiftsDisplay');
+            if (heroShifts) heroShifts.textContent = `${activeCount} / 3 ${activeCount === 3 ? 'Peak' : 'Active'}`;
+
+            const moodIcon = document.getElementById('skyMoodIcon');
+            const moodText = document.getElementById('skyMoodText');
+            const bodyEl = document.body;
+            const beam1 = document.getElementById('officeSunbeam1');
+            const beam2 = document.getElementById('officeSunbeam2');
+
+            bodyEl.classList.remove('office-morning', 'office-noon', 'office-sunset');
+
+            if (simHour < 12) {
+                bodyEl.classList.add('office-morning');
+                if (beam1) beam1.setAttribute('fill', '#F59E0B');
+                if (beam2) beam2.setAttribute('fill', '#FBBF24');
+                if (moodIcon) moodIcon.textContent = '🌅';
+                if (moodText) moodText.textContent = 'Morning Office Sun (First Shift Leading Outreach)';
+            } else if (simHour >= 17) {
+                bodyEl.classList.add('office-sunset');
+                if (beam1) beam1.setAttribute('fill', '#F97316');
+                if (beam2) beam2.setAttribute('fill', '#6366F1');
+                if (moodIcon) moodIcon.textContent = '🌆';
+                if (moodText) moodText.textContent = 'Golden Sunset Office (Mid-Day Shift Active)';
+            } else if (activeCount === 3) {
+                bodyEl.classList.add('office-noon');
+                if (beam1) beam1.setAttribute('fill', '#0D9488');
+                if (beam2) beam2.setAttribute('fill', '#3B82F6');
+                if (moodIcon) moodIcon.textContent = '🔥';
+                if (moodText) moodText.textContent = 'Peak Overlap Window (All 3 Shifts Active)';
+            } else {
+                bodyEl.classList.add('office-noon');
+                if (beam1) beam1.setAttribute('fill', '#14B8A6');
+                if (beam2) beam2.setAttribute('fill', '#2563EB');
+                if (moodIcon) moodIcon.textContent = '☀️';
+                if (moodText) moodText.textContent = 'Bright Midday Office (Dual Shift Overlap)';
+            }
+
+            const summaryBadge = document.getElementById('coverageSummaryBadge');
+            if (summaryBadge) summaryBadge.textContent = `${activeCount} of 3 Shifts Active`;
+
+            const pct = Math.min(100, Math.max(0, ((simHour - 10) / 9) * 100));
+            const needle = document.getElementById('timelineNeedle');
+            if (needle) needle.style.left = `${pct}%`;
+
+            updateClockHands(simHour);
+            updateCardState(1, s1Active, '"Morning calls active!"', '"Shift completed • EOD logged"');
+            updateCardState(2, s2Active, '"Demos in progress!"', simHour < 12 ? '"Starts at 12:00 PM"' : '"Shift completed • EOD logged"');
+            updateCardState(3, s3Active, '"Closing deals till 7 PM!"', '"Starts at 2:00 PM"');
+        }
+
+        function manualScrubHour(val) {
+            if (isAutoPlaying) toggleDayAutoPlay();
+            updateHourSimulator(val);
+        }
+
+        function toggleDayAutoPlay() {
+            isAutoPlaying = !isAutoPlaying;
+            const btn = document.getElementById('autoPlayToggleBtn');
+            const label = document.getElementById('autoPlayLabel');
+            const dot = document.getElementById('autoPlayDot');
+            if (!btn || !label || !dot) return;
+
+            if (isAutoPlaying) {
+                btn.className = 'min-h-[40px] inline-flex items-center gap-1.5 px-3 rounded-xl bg-teal-600 text-white text-xs font-extrabold shadow-xs hover:bg-teal-500 transition cursor-pointer';
+                label.textContent = 'Day Cycle: ON';
+                dot.className = 'w-2 h-2 rounded-full bg-amber-300 animate-ping';
+            } else {
+                btn.className = 'min-h-[40px] inline-flex items-center gap-1.5 px-3 rounded-xl bg-slate-200 text-navy-900 text-xs font-extrabold hover:bg-slate-300 transition cursor-pointer';
+                label.textContent = 'Day Cycle: PAUSED';
+                dot.className = 'w-2 h-2 rounded-full bg-slate-500';
+            }
+        }
+
+        setInterval(() => {
+            if (!isAutoPlaying) return;
+            const step = 0.08 * LOCKED_SIM_SPEED;
+            let nextHour = simHour + step;
+            if (nextHour > 18.9) nextHour = 10.0;
+            updateHourSimulator(nextHour);
+        }, 250);
+
+        const HAPPY_AVATAR_SVG = `
+            <svg class="w-11 h-11" viewBox="0 0 48 48" fill="none">
+                <circle cx="24" cy="24" r="21" fill="#FDE68A" stroke="#F59E0B" stroke-width="2"/>
+                <path d="M13 19Q17 14 21 19" stroke="#78350F" stroke-width="2.4" stroke-linecap="round"/>
+                <path d="M27 19Q31 14 35 19" stroke="#78350F" stroke-width="2.4" stroke-linecap="round"/>
+                <ellipse cx="13" cy="25" rx="3.5" ry="2" fill="#FDA4AF" fill-opacity="0.7"/>
+                <ellipse cx="35" cy="25" rx="3.5" ry="2" fill="#FDA4AF" fill-opacity="0.7"/>
+                <path d="M15 28Q24 37 33 28" stroke="#78350F" stroke-width="2.6" stroke-linecap="round" fill="#FFFFFF"/>
+            </svg>
+        `;
+
+        const STRESSED_AVATAR_SVG = `
+            <svg class="w-11 h-11" viewBox="0 0 48 48" fill="none">
+                <circle cx="24" cy="24" r="21" fill="#FECDD3" stroke="#E11D48" stroke-width="2"/>
+                <path d="M13 17L20 20" stroke="#881337" stroke-width="2.3" stroke-linecap="round"/>
+                <path d="M35 17L28 20" stroke="#881337" stroke-width="2.3" stroke-linecap="round"/>
+                <circle cx="17" cy="23" r="2.3" fill="#881337"/>
+                <circle cx="31" cy="23" r="2.3" fill="#881337"/>
+                <path d="M37 12C37 12 40 16 40 18C40 19.6 38.6 21 37 21C35.4 21 34 19.6 34 18C34 16 37 12 37 12Z" fill="#38BDF8"/>
+                <path d="M16 34Q24 27 32 34" stroke="#881337" stroke-width="2.4" stroke-linecap="round"/>
+            </svg>
+        `;
+
+        function setRetentionView(view) {
+            const goodBtn = document.getElementById('compareGoodBtn');
+            const badBtn = document.getElementById('compareBadBtn');
+            const panel = document.getElementById('retentionImpactPanel');
+            const iconBox = document.getElementById('retentionIconBox');
+            const title = document.getElementById('retentionStatusTitle');
+            const desc = document.getElementById('retentionStatusDesc');
+            const pill = document.getElementById('retentionMetricPill');
+
+            if (!goodBtn || !badBtn || !panel || !iconBox || !title || !desc || !pill) return;
+
+            if (view === 'filtered') {
+                goodBtn.className = 'flex-1 sm:flex-initial min-h-[40px] px-3 py-1.5 rounded-lg bg-emerald-600 text-white text-xs font-extrabold transition cursor-pointer';
+                badBtn.className = 'flex-1 sm:flex-initial min-h-[40px] px-3 py-1.5 rounded-lg text-slate-600 hover:text-rose-700 text-xs font-bold transition cursor-pointer';
+
+                panel.className = 'rounded-xl bg-white border border-emerald-200 p-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 transition-all';
+                iconBox.className = 'w-14 h-14 rounded-2xl bg-emerald-100 flex items-center justify-center shrink-0 shadow-2xs';
+                iconBox.innerHTML = HAPPY_AVATAR_SVG;
+                title.className = 'font-display text-sm sm:text-base font-extrabold text-emerald-900';
+                title.textContent = 'High Agent Morale, Trust & Long-Term Retention';
+                desc.textContent = 'Because the Operational Manager already shares strong rapport with the sales team, queries are resolved constructively—keeping agents focused, motivated, and loyal to Booknglow.';
+                pill.className = 'px-4 py-2 rounded-xl bg-emerald-50 border border-emerald-200 text-center self-stretch sm:self-auto shrink-0';
+                pill.innerHTML = '<div class="text-[10px] font-extrabold uppercase text-emerald-700">Attrition Risk</div><div class="font-display text-sm font-extrabold text-emerald-900">Near Zero</div>';
+            } else {
+                badBtn.className = 'flex-1 sm:flex-initial min-h-[40px] px-3 py-1.5 rounded-lg bg-rose-600 text-white text-xs font-extrabold transition cursor-pointer';
+                goodBtn.className = 'flex-1 sm:flex-initial min-h-[40px] px-3 py-1.5 rounded-lg text-slate-600 hover:text-emerald-700 text-xs font-bold transition cursor-pointer';
+
+                panel.className = 'rounded-xl bg-rose-50/60 border border-rose-300 p-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 transition-all';
+                iconBox.className = 'w-14 h-14 rounded-2xl bg-rose-100 flex items-center justify-center shrink-0 shadow-2xs agent-stressed';
+                iconBox.innerHTML = STRESSED_AVATAR_SVG;
+                title.className = 'font-display text-sm sm:text-base font-extrabold text-rose-900';
+                title.textContent = 'Sudden Agent Frustration & High Employee Loss Risk';
+                desc.textContent = 'When Admin or upper leadership suddenly interrogates sales agents directly without checking shift data or routing via the Operational Manager, agents feel micromanaged, get frustrated, and leave the company.';
+                pill.className = 'px-4 py-2 rounded-xl bg-rose-100 border border-rose-300 text-center self-stretch sm:self-auto shrink-0';
+                pill.innerHTML = '<div class="text-[10px] font-extrabold uppercase text-rose-700">Attrition Risk</div><div class="font-display text-sm font-extrabold text-rose-900">Critical</div>';
+            }
+        }
+
+        function runProtocolSimulation() {
+            if (simTimer) clearTimeout(simTimer);
+
+            const btn = document.getElementById('simulateBtn');
+            const resetBtn = document.getElementById('resetSimBtn');
+            const banner = document.getElementById('simBanner');
+            const statusText = document.getElementById('simStatusText');
+            const stepBadge = document.getElementById('simStepBadge');
+            const escalationSection = document.getElementById('section-escalation');
+
+            if (escalationSection) {
+                escalationSection.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            }
+
+            const steps = [
+                {
+                    id: 'protocol-node-1',
+                    badge: 'Step 1 of 3',
+                    text: 'STEP 1: MD / CEO / Admin inspects WhatsApp Group Logs & EOD Tracker Sheet first before raising any query.'
+                },
+                {
+                    id: 'protocol-node-2',
+                    badge: 'Step 2 of 3',
+                    text: 'STEP 2: Question is routed exclusively to the Operational Manager first, preserving rapport and preventing agent frustration.'
+                },
+                {
+                    id: 'protocol-node-3',
+                    badge: 'Step 3 of 3',
+                    text: 'STEP 3: Internal Direct Message (DM) sent first — a phone call is made ONLY if there is no response to the DM.'
+                }
+            ];
+
+            if (banner) banner.classList.remove('hidden');
+            if (resetBtn) resetBtn.classList.remove('hidden');
+            if (btn) {
+                btn.disabled = true;
+                btn.classList.add('opacity-70', 'cursor-not-allowed');
+            }
+
+            function activateStep(i) {
+                steps.forEach((s, index) => {
+                    const el = document.getElementById(s.id);
+                    if (!el) return;
+                    if (index === i) {
+                        el.classList.add('protocol-active');
+                        el.classList.remove('protocol-dimmed');
+                    } else {
+                        el.classList.remove('protocol-active');
+                        el.classList.add('protocol-dimmed');
+                    }
+                });
+
+                if (stepBadge) stepBadge.textContent = steps[i].badge;
+                if (statusText) statusText.textContent = steps[i].text;
+
+                if (i < steps.length - 1) {
+                    simTimer = setTimeout(() => activateStep(i + 1), 2800);
+                } else {
+                    simTimer = setTimeout(() => {
+                        steps.forEach(s => {
+                            const el = document.getElementById(s.id);
+                            if (el) el.classList.remove('protocol-active', 'protocol-dimmed');
+                        });
+                        if (stepBadge) stepBadge.textContent = 'Protocol Verified';
+                        if (statusText) statusText.textContent = 'Simulation complete: Zero workflow disturbance & maximum agent retention!';
+                        if (btn) {
+                            btn.disabled = false;
+                            btn.classList.remove('opacity-70', 'cursor-not-allowed');
+                        }
+                        const btnText = document.getElementById('simBtnText');
+                        if (btnText) btnText.textContent = 'Replay Query Path';
+                    }, 3000);
+                }
+            }
+
+            activateStep(0);
+        }
+
+        function resetSimulation() {
+            if (simTimer) clearTimeout(simTimer);
+            ['protocol-node-1', 'protocol-node-2', 'protocol-node-3'].forEach(id => {
+                const el = document.getElementById(id);
+                if (el) el.classList.remove('protocol-active', 'protocol-dimmed');
+            });
+            const banner = document.getElementById('simBanner');
+            const resetBtn = document.getElementById('resetSimBtn');
+            const btn = document.getElementById('simulateBtn');
+            const btnText = document.getElementById('simBtnText');
+
+            if (banner) banner.classList.add('hidden');
+            if (resetBtn) resetBtn.classList.add('hidden');
+            if (btn) {
+                btn.disabled = false;
+                btn.classList.remove('opacity-70', 'cursor-not-allowed');
+            }
+            if (btnText) btnText.textContent = 'Simulate Query Path';
+        }
+
+        // Initialize at 2:00 PM Peak Overlap on load
+        window.addEventListener('DOMContentLoaded', () => {
+            updateHourSimulator(14.0);
+        });
+    </script>
+</body>
+</html>
